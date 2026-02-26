@@ -16,69 +16,79 @@ public class VentanaConstancia extends JFrame {
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        panelIzquierdo = new javax.swing.JPanel();
+        panelBusqueda = new javax.swing.JPanel();
+        lblId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        panelDerecho = new javax.swing.JPanel();
+        scrollLista = new javax.swing.JScrollPane();
+        listaAlumnos = new javax.swing.JList<>();
+        scrollInfo = new javax.swing.JScrollPane();
+        txtInfo = new javax.swing.JTextArea();
+        panelBoton = new javax.swing.JPanel();
+        btnGenerar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Constancia de Alumno Inscrito");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(850, 550);
-        setLocationRelativeTo(null);
-        setLayout(new BorderLayout(10, 10));
+        setPreferredSize(new java.awt.Dimension(850, 550));
 
-        // panel izquierdo - busqueda por id
-        JPanel panelIzquierdo = new JPanel();
-        panelIzquierdo.setLayout(new BorderLayout(5, 5));
-        panelIzquierdo.setBorder(BorderFactory.createTitledBorder("Buscar Alumno"));
-        panelIzquierdo.setPreferredSize(new Dimension(250, 0));
+        panelIzquierdo.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscar Alumno"));
+        panelIzquierdo.setPreferredSize(new java.awt.Dimension(250, 429));
+        panelIzquierdo.setLayout(new java.awt.BorderLayout());
 
-        JLabel lblId = new JLabel("ID del Alumno:");
-        txtId = new JTextField();
-        txtId.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        panelBusqueda.setLayout(new java.awt.BorderLayout());
 
-        JPanel panelBusqueda = new JPanel(new BorderLayout(5, 5));
-        panelBusqueda.add(lblId, BorderLayout.NORTH);
-        panelBusqueda.add(txtId, BorderLayout.CENTER);
+        lblId.setText("ID del Alumno:");
+        panelBusqueda.add(lblId, java.awt.BorderLayout.NORTH);
 
-        panelIzquierdo.add(panelBusqueda, BorderLayout.NORTH);
+        txtId.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        panelBusqueda.add(txtId, java.awt.BorderLayout.CENTER);
 
-        // panel derecho - resultados y constancia
-        JPanel panelDerecho = new JPanel();
-        panelDerecho.setLayout(new BorderLayout(5, 5));
-        panelDerecho.setBorder(BorderFactory.createTitledBorder("Resultados"));
+        panelIzquierdo.add(panelBusqueda, java.awt.BorderLayout.NORTH);
 
-        // lista de alumnos
-        listaAlumnos = new JList<>(modeloLista);
-        listaAlumnos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listaAlumnos.setFont(new Font("SansSerif", Font.PLAIN, 13));
-        scrollLista = new JScrollPane(listaAlumnos);
-        scrollLista.setPreferredSize(new Dimension(0, 150));
-        scrollLista.setBorder(BorderFactory.createTitledBorder("Alumnos encontrados"));
+        getContentPane().add(panelIzquierdo, java.awt.BorderLayout.WEST);
 
-        // area de informacion
-        txtInfo = new JTextArea();
+        panelDerecho.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
+        panelDerecho.setLayout(new java.awt.BorderLayout());
+
+        scrollLista.setBorder(javax.swing.BorderFactory.createTitledBorder("Alumnos encontrados"));
+        scrollLista.setPreferredSize(new java.awt.Dimension(590, 150));
+
+        listaAlumnos.setFont(new java.awt.Font("SansSerif", 0, 13)); // NOI18N
+        listaAlumnos.setModel(modeloLista);
+        listaAlumnos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scrollLista.setViewportView(listaAlumnos);
+
+        panelDerecho.add(scrollLista, java.awt.BorderLayout.NORTH);
+
+        scrollInfo.setBorder(javax.swing.BorderFactory.createTitledBorder("Información del Alumno"));
+
         txtInfo.setEditable(false);
-        txtInfo.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        txtInfo.setColumns(20);
+        txtInfo.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         txtInfo.setLineWrap(true);
+        txtInfo.setRows(5);
         txtInfo.setWrapStyleWord(true);
-        scrollInfo = new JScrollPane(txtInfo);
-        scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
+        scrollInfo.setViewportView(txtInfo);
 
-        // boton generar
-        btnGenerar = new JButton("Generar Constancia");
+        panelDerecho.add(scrollInfo, java.awt.BorderLayout.CENTER);
+
+        panelBoton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        btnGenerar.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        btnGenerar.setText("Generar Constancia");
         btnGenerar.setEnabled(false);
-        btnGenerar.setFont(new Font("SansSerif", Font.BOLD, 13));
-
-        JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         panelBoton.add(btnGenerar);
 
-        panelDerecho.add(scrollLista, BorderLayout.NORTH);
-        panelDerecho.add(scrollInfo, BorderLayout.CENTER);
-        panelDerecho.add(panelBoton, BorderLayout.SOUTH);
+        panelDerecho.add(panelBoton, java.awt.BorderLayout.SOUTH);
 
-        add(panelIzquierdo, BorderLayout.WEST);
-        add(panelDerecho, BorderLayout.CENTER);
+        getContentPane().add(panelDerecho, java.awt.BorderLayout.CENTER);
 
-        ((JPanel) getContentPane()).setBorder(
-                BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // getters para que el controlador acceda a los componentes
@@ -108,6 +118,7 @@ public class VentanaConstancia extends JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerar;
+    private javax.swing.JLabel lblId;
     private javax.swing.JList<String> listaAlumnos;
     private javax.swing.JPanel panelBoton;
     private javax.swing.JPanel panelBusqueda;
@@ -117,6 +128,5 @@ public class VentanaConstancia extends JFrame {
     private javax.swing.JScrollPane scrollLista;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextArea txtInfo;
-    private javax.swing.JLabel lblId;
     // End of variables declaration//GEN-END:variables
 }
