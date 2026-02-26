@@ -30,6 +30,13 @@ public class VentanaConstancia extends JFrame implements IAlumnoObserver {
     public VentanaConstancia() {
         modeloLista = new DefaultListModel<>();
         initComponents();
+
+        // Mejoras visuales (solo funcionan si FlatLaf está activo)
+        txtId.putClientProperty("JTextField.placeholderText", "Ej. 123456...");
+        txtId.putClientProperty("JTextField.showClearButton", true);
+        listaAlumnos.putClientProperty("JList.showItemSeparators", true);
+        scrollInfo.putClientProperty("JScrollPane.smoothScrolling", true);
+        scrollLista.putClientProperty("JScrollPane.smoothScrolling", true);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated

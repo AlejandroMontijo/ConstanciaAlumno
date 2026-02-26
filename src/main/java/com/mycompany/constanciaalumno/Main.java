@@ -1,7 +1,10 @@
 package com.mycompany.constanciaalumno;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import com.mycompany.constanciaalumno.controlador.ControladorConstancia;
 import com.mycompany.constanciaalumno.vista.VentanaConstancia;
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.*;
 
 /**
@@ -26,14 +29,30 @@ public class Main {
      * @param args Argumentos de línea de comandos (no se utilizan)
      */
     public static void main(String[] args) {
-        // look and feel del sistema
+        // =============== DISEÑO PROFESIONAL =================
+        // Usar FlatLaf (Flat Look and Feel) moderno
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            // Configurar propiedades estéticas modernas antes de instanciar la UI
+            UIManager.put("Button.arc", 12); // Botones redondeados
+            UIManager.put("Component.arc", 12); // Campos de texto redondeados
+            UIManager.put("ProgressBar.arc", 12);
+            UIManager.put("TabbedPane.showTabSeparators", true);
+            UIManager.put("Component.focusWidth", 2); // Ancho del borde al seleccionar
+            UIManager.put("ScrollBar.showButtons", false);
+            UIManager.put("ScrollBar.width", 12); // Scrollbars delgados tipo Mac/Web
+
+            // Color de acento institucional (Azul ITSON o profesional)
+            UIManager.put("Component.accentColor", new Color(0, 102, 204));
+
+            // Instalar el tema Claro Moderno
+            FlatLightLaf.setup();
+
         } catch (Exception ex) {
+            System.err.println("No se pudo cargar el diseño profesional. Usando el de por defecto.");
             ex.printStackTrace();
         }
 
-        // ejecutar en el hilo de swing
+        // =============== INICIALIZACIÓN MVC =================
         SwingUtilities.invokeLater(() -> {
             VentanaConstancia vista = new VentanaConstancia();
             ControladorConstancia controlador = new ControladorConstancia(vista);
