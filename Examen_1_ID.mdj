@@ -889,6 +889,66 @@
                   "direction": "return"
                 }
               ]
+            },
+            {
+              "_type": "UMLOperation",
+              "_id": "ID_u3itaesy70l",
+              "_parent": {
+                "$ref": "ID_3469bf2f4a0a5180f3bc1a5c"
+              },
+              "name": "actualizar",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "_type": "UMLParameter",
+                  "_id": "ID_aqz35djtwx",
+                  "_parent": {
+                    "$ref": "temp"
+                  },
+                  "name": "observable",
+                  "type": "IAlumnoObservable"
+                }
+              ]
+            },
+            {
+              "_type": "UMLOperation",
+              "_id": "ID_6auiqdgb9ok",
+              "_parent": {
+                "$ref": "ID_3469bf2f4a0a5180f3bc1a5c"
+              },
+              "name": "renderizarVistaConstancia",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "_type": "UMLParameter",
+                  "_id": "ID_1jd3t63purv",
+                  "_parent": {
+                    "$ref": "temp"
+                  },
+                  "name": "observable",
+                  "type": "IAlumnoObservable"
+                }
+              ]
+            },
+            {
+              "_type": "UMLOperation",
+              "_id": "ID_tisw4ehea67",
+              "_parent": {
+                "$ref": "ID_3469bf2f4a0a5180f3bc1a5c"
+              },
+              "name": "getScrollInfo",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "_type": "UMLParameter",
+                  "_id": "ID_9rk206782r",
+                  "_parent": {
+                    "$ref": "temp"
+                  },
+                  "type": "JScrollPane",
+                  "direction": "return"
+                }
+              ]
             }
           ]
         },
@@ -913,32 +973,12 @@
             },
             {
               "_type": "UMLAttribute",
-              "_id": "ID_224dea04317f9f121baf19f1",
+              "_id": "ID_fkkn13kuyr",
               "_parent": {
                 "$ref": "ID_abacde2137935f1cdf5a099a"
               },
-              "name": "todosLosAlumnos",
-              "type": "ArrayList<Alumno>",
-              "visibility": "private"
-            },
-            {
-              "_type": "UMLAttribute",
-              "_id": "ID_d89ff9ac1a57eade5a6f6fe4",
-              "_parent": {
-                "$ref": "ID_abacde2137935f1cdf5a099a"
-              },
-              "name": "alumnosFiltrados",
-              "type": "ArrayList<Alumno>",
-              "visibility": "private"
-            },
-            {
-              "_type": "UMLAttribute",
-              "_id": "ID_121bc5f30df52fbc3cdcf15c",
-              "_parent": {
-                "$ref": "ID_abacde2137935f1cdf5a099a"
-              },
-              "name": "alumnoSeleccionado",
-              "type": "Alumno",
+              "name": "modelo",
+              "type": "DatosAlumnos",
               "visibility": "private"
             }
           ],
@@ -949,7 +989,7 @@
               "_parent": {
                 "$ref": "ID_abacde2137935f1cdf5a099a"
               },
-              "name": "configurarEventos",
+              "name": "inicializarEventos",
               "visibility": "private",
               "parameters": []
             },
@@ -960,26 +1000,6 @@
                 "$ref": "ID_abacde2137935f1cdf5a099a"
               },
               "name": "filtrarAlumnos",
-              "visibility": "private",
-              "parameters": []
-            },
-            {
-              "_type": "UMLOperation",
-              "_id": "ID_f2b02282a2b4900929778ba9",
-              "_parent": {
-                "$ref": "ID_abacde2137935f1cdf5a099a"
-              },
-              "name": "mostrarDatosAlumno",
-              "visibility": "private",
-              "parameters": []
-            },
-            {
-              "_type": "UMLOperation",
-              "_id": "ID_4eae12c7d9ec5993bd5df988",
-              "_parent": {
-                "$ref": "ID_abacde2137935f1cdf5a099a"
-              },
-              "name": "generarConstancia",
               "visibility": "private",
               "parameters": []
             }
@@ -1002,7 +1022,7 @@
               },
               "name": "id",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1012,7 +1032,7 @@
               },
               "name": "nombre",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1022,7 +1042,7 @@
               },
               "name": "apellido",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1032,7 +1052,7 @@
               },
               "name": "carrera",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1042,7 +1062,7 @@
               },
               "name": "semestre",
               "type": "int",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1052,7 +1072,7 @@
               },
               "name": "materias",
               "type": "ArrayList<Materia>",
-              "visibility": "package"
+              "visibility": "private"
             }
           ],
           "operations": [
@@ -1172,7 +1192,7 @@
                   "_parent": {
                     "$ref": "ID_f58082be755027a10add3434"
                   },
-                  "type": "ArrayList<Materia>",
+                  "type": "List<Materia>",
                   "direction": "return"
                 }
               ]
@@ -1196,7 +1216,7 @@
               },
               "name": "clave",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1206,7 +1226,7 @@
               },
               "name": "nombre",
               "type": "String",
-              "visibility": "package"
+              "visibility": "private"
             },
             {
               "_type": "UMLAttribute",
@@ -1216,7 +1236,7 @@
               },
               "name": "creditos",
               "type": "int",
-              "visibility": "package"
+              "visibility": "private"
             }
           ],
           "operations": [
@@ -2003,7 +2023,7 @@
                   },
                   "name": "id",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2013,7 +2033,7 @@
                   },
                   "name": "nombre",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2023,7 +2043,7 @@
                   },
                   "name": "apellido",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2033,7 +2053,7 @@
                   },
                   "name": "carrera",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2043,7 +2063,7 @@
                   },
                   "name": "semestre",
                   "type": "int",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2053,7 +2073,7 @@
                   },
                   "name": "materias",
                   "type": "ArrayList<Materia>",
-                  "visibility": "package"
+                  "visibility": "private"
                 }
               ],
               "operations": [
@@ -2173,7 +2193,7 @@
                       "_parent": {
                         "$ref": "ID_fb661943107850bc5a33a55b"
                       },
-                      "type": "ArrayList<Materia>",
+                      "type": "List<Materia>",
                       "direction": "return"
                     }
                   ]
@@ -2197,7 +2217,7 @@
                   },
                   "name": "clave",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2207,7 +2227,7 @@
                   },
                   "name": "nombre",
                   "type": "String",
-                  "visibility": "package"
+                  "visibility": "private"
                 },
                 {
                   "_type": "UMLAttribute",
@@ -2217,7 +2237,7 @@
                   },
                   "name": "creditos",
                   "type": "int",
-                  "visibility": "package"
+                  "visibility": "private"
                 }
               ],
               "operations": [
@@ -2291,24 +2311,205 @@
               },
               "name": "DatosAlumnos",
               "stereotype": "entity",
-              "attributes": [],
-              "operations": [
+              "attributes": [
                 {
-                  "_type": "UMLOperation",
-                  "_id": "ID_c2a26545fc5c31f106d67d08",
+                  "_type": "UMLAttribute",
+                  "_id": "ID_8aqxqpt4dl8",
                   "_parent": {
                     "$ref": "ID_9b6362ad333fa82e0972d7a7"
                   },
-                  "name": "obtenerAlumnos",
+                  "name": "todosLosAlumnos",
+                  "type": "ArrayList<Alumno>",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "ID_ecvldek9vbc",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "alumnosFiltrados",
+                  "type": "List<Alumno>",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "ID_vy50qn4w0s",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "alumnoSeleccionado",
+                  "type": "Alumno",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "ID_5zjot3m0ky7",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "mensajeBusqueda",
+                  "type": "String",
+                  "visibility": "private"
+                },
+                {
+                  "_type": "UMLAttribute",
+                  "_id": "ID_ddl8o64xf4w",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "observadores",
+                  "type": "List<IAlumnoObserver>",
+                  "visibility": "private"
+                }
+              ],
+              "operations": [
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_rheol6hzup",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "agregarObservador",
                   "visibility": "public",
                   "parameters": [
                     {
                       "_type": "UMLParameter",
-                      "_id": "ID_142996154314204075f6fb13",
+                      "_id": "ID_r09u9s610c",
                       "_parent": {
-                        "$ref": "ID_c2a26545fc5c31f106d67d08"
+                        "$ref": "ID_rheol6hzup"
                       },
-                      "type": "ArrayList<Alumno>",
+                      "name": "o",
+                      "type": "IAlumnoObserver"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_vy4h57h6fj",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "removerObservador",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_824silbybc9",
+                      "_parent": {
+                        "$ref": "ID_vy4h57h6fj"
+                      },
+                      "name": "o",
+                      "type": "IAlumnoObserver"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_iho2wa716wp",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "notificarObservadores",
+                  "visibility": "public",
+                  "parameters": []
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_dykhsfflwwt",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "filtrarAlumnos",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_6haw6p81ygo",
+                      "_parent": {
+                        "$ref": "ID_dykhsfflwwt"
+                      },
+                      "name": "texto",
+                      "type": "String"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_3g6ksdu40n",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "seleccionarAlumno",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_s1auww8b48g",
+                      "_parent": {
+                        "$ref": "ID_3g6ksdu40n"
+                      },
+                      "name": "index",
+                      "type": "int"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_ticxowhqxa",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "getAlumnosFiltrados",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_cbq1gc8vlxa",
+                      "_parent": {
+                        "$ref": "ID_ticxowhqxa"
+                      },
+                      "type": "List<Alumno>",
+                      "direction": "return"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_2mnvvzl5e1l",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "getAlumnoSeleccionado",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_szwktb7busk",
+                      "_parent": {
+                        "$ref": "ID_2mnvvzl5e1l"
+                      },
+                      "type": "Alumno",
+                      "direction": "return"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_4bfzd9nq22v",
+                  "_parent": {
+                    "$ref": "ID_9b6362ad333fa82e0972d7a7"
+                  },
+                  "name": "getMensajeBusqueda",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_fo9bjk14e6u",
+                      "_parent": {
+                        "$ref": "ID_4bfzd9nq22v"
+                      },
+                      "type": "String",
                       "direction": "return"
                     }
                   ]
@@ -2505,6 +2706,66 @@
                       "direction": "return"
                     }
                   ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_3mz9ytrmlfo",
+                  "_parent": {
+                    "$ref": "ID_2ecca0024fb253b7baaeb57b"
+                  },
+                  "name": "actualizar",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_jhmskbj8c6d",
+                      "_parent": {
+                        "$ref": "temp"
+                      },
+                      "name": "observable",
+                      "type": "IAlumnoObservable"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_20bfmqbgessi",
+                  "_parent": {
+                    "$ref": "ID_2ecca0024fb253b7baaeb57b"
+                  },
+                  "name": "renderizarVistaConstancia",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_ktjx98pxhya",
+                      "_parent": {
+                        "$ref": "temp"
+                      },
+                      "name": "observable",
+                      "type": "IAlumnoObservable"
+                    }
+                  ]
+                },
+                {
+                  "_type": "UMLOperation",
+                  "_id": "ID_tta1pbyt0y",
+                  "_parent": {
+                    "$ref": "ID_2ecca0024fb253b7baaeb57b"
+                  },
+                  "name": "getScrollInfo",
+                  "visibility": "public",
+                  "parameters": [
+                    {
+                      "_type": "UMLParameter",
+                      "_id": "ID_9z1m8c368ta",
+                      "_parent": {
+                        "$ref": "temp"
+                      },
+                      "type": "JScrollPane",
+                      "direction": "return"
+                    }
+                  ]
                 }
               ]
             }
@@ -2539,32 +2800,12 @@
                 },
                 {
                   "_type": "UMLAttribute",
-                  "_id": "ID_50ad9bf2df3e02edeb9c908c",
+                  "_id": "ID_wg0lwjz1px",
                   "_parent": {
                     "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
                   },
-                  "name": "todosLosAlumnos",
-                  "type": "ArrayList<Alumno>",
-                  "visibility": "private"
-                },
-                {
-                  "_type": "UMLAttribute",
-                  "_id": "ID_bb669dcb5fa951dfa3a649d3",
-                  "_parent": {
-                    "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
-                  },
-                  "name": "alumnosFiltrados",
-                  "type": "ArrayList<Alumno>",
-                  "visibility": "private"
-                },
-                {
-                  "_type": "UMLAttribute",
-                  "_id": "ID_54bfee2d15c9ef4df8fd1632",
-                  "_parent": {
-                    "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
-                  },
-                  "name": "alumnoSeleccionado",
-                  "type": "Alumno",
+                  "name": "modelo",
+                  "type": "DatosAlumnos",
                   "visibility": "private"
                 }
               ],
@@ -2575,7 +2816,7 @@
                   "_parent": {
                     "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
                   },
-                  "name": "configurarEventos",
+                  "name": "inicializarEventos",
                   "visibility": "private",
                   "parameters": []
                 },
@@ -2586,26 +2827,6 @@
                     "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
                   },
                   "name": "filtrarAlumnos",
-                  "visibility": "private",
-                  "parameters": []
-                },
-                {
-                  "_type": "UMLOperation",
-                  "_id": "ID_963ec87ccb7fa23ab415b1ab",
-                  "_parent": {
-                    "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
-                  },
-                  "name": "mostrarDatosAlumno",
-                  "visibility": "private",
-                  "parameters": []
-                },
-                {
-                  "_type": "UMLOperation",
-                  "_id": "ID_08977d8298656018b758b047",
-                  "_parent": {
-                    "$ref": "ID_7d7eea28fb6103d2c1ec43fd"
-                  },
-                  "name": "generarConstancia",
                   "visibility": "private",
                   "parameters": []
                 }
