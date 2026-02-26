@@ -76,6 +76,7 @@ public class DatosAlumnos implements IAlumnoObservable {
         alumnoSeleccionado = null;
 
         if (texto == null || texto.trim().isEmpty()) {
+            mensajeBusqueda = "";
             notificarObservadores();
             return; // Lista vacía cuando no hay texto
         }

@@ -121,7 +121,7 @@ public class Alumno {
     /**
      * Obtiene la lista completa de las materias inscritas por el alumno.
      * 
-     * @return Un ArrayList de objetos Materia.
+     * @return Una lista no modificable de objetos Materia.
      */
     public List<Materia> getMaterias() {
         return Collections.unmodifiableList(materias);

@@ -1,6 +1,7 @@
 package com.mycompany.constanciaalumno.vista;
 
 import com.mycompany.constanciaalumno.modelo.Alumno;
+import com.mycompany.constanciaalumno.modelo.IAlumnoObservable;
 import com.mycompany.constanciaalumno.modelo.Materia;
 import java.awt.*;
 import java.text.SimpleDateFormat;
@@ -121,7 +122,7 @@ public class VentanaConstancia extends JFrame implements IAlumnoObserver {
     // ==========================================
 
     @Override
-    public void actualizar(com.mycompany.constanciaalumno.modelo.IAlumnoObservable observable) {
+    public void actualizar(IAlumnoObservable observable) {
         // 1. Dibuja la lista usando el estado extraído
         modeloLista.clear();
         for (Alumno a : observable.getAlumnosFiltrados()) {
@@ -173,7 +174,7 @@ public class VentanaConstancia extends JFrame implements IAlumnoObserver {
      * 
      * @param observable El observable que contiene al alumno seleccionado.
      */
-    public void renderizarVistaConstancia(com.mycompany.constanciaalumno.modelo.IAlumnoObservable observable) {
+    public void renderizarVistaConstancia(IAlumnoObservable observable) {
         Alumno alumno = observable.getAlumnoSeleccionado();
         if (alumno == null)
             return;
