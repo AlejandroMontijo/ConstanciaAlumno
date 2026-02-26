@@ -8,19 +8,15 @@ import javax.swing.*;
  */
 public class VentanaConstancia extends JFrame {
 
-    private JTextField txtId;
-    private JList<String> listaAlumnos;
     private DefaultListModel<String> modeloLista;
-    private JTextArea txtInfo;
-    private JButton btnGenerar;
-    private JScrollPane scrollLista;
-    private JScrollPane scrollInfo;
 
     public VentanaConstancia() {
         modeloLista = new DefaultListModel<>();
         initComponents();
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         setTitle("Constancia de Alumno Inscrito");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -83,7 +79,7 @@ public class VentanaConstancia extends JFrame {
 
         ((JPanel) getContentPane()).setBorder(
                 BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
     // getters para que el controlador acceda a los componentes
     public JTextField getTxtId() {
@@ -109,4 +105,18 @@ public class VentanaConstancia extends JFrame {
     public JScrollPane getScrollInfo() {
         return scrollInfo;
     }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerar;
+    private javax.swing.JList<String> listaAlumnos;
+    private javax.swing.JPanel panelBoton;
+    private javax.swing.JPanel panelBusqueda;
+    private javax.swing.JPanel panelDerecho;
+    private javax.swing.JPanel panelIzquierdo;
+    private javax.swing.JScrollPane scrollInfo;
+    private javax.swing.JScrollPane scrollLista;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextArea txtInfo;
+    private javax.swing.JLabel lblId;
+    // End of variables declaration//GEN-END:variables
 }
