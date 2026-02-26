@@ -1,20 +1,106 @@
 package com.mycompany.constanciaalumno.modelo;
 
+import com.mycompany.constanciaalumno.vista.IAlumnoObserver;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Esta clase provee un repositorio estático de datos de prueba para los
- * alumnos.
- * Simula el acceso a una base de datos.
+ * Gestor de alumnos (Modelo). Actúa como Sujeto Observable.
+ * Mantiene el estado de la lista actual, el alumno seleccionado y notifica a
+ * las vistas.
  * 
  * @author alejandro
  */
-public class DatosAlumnos {
+public class DatosAlumnos implements IAlumnoObservable {
+
+    private ArrayList<Alumno> todosLosAlumnos;
+    private List<Alumno> alumnosFiltrados;
+    private Alumno alumnoSeleccionado;
+
+    // Lista de vistas/observadores suscritos
+    private List<IAlumnoObserver> observadores;
 
     /**
-     * Constructor por defecto de la clase DatosAlumnos.
+     * Construye e inicializa el repositorio con datos por defecto.
      */
     public DatosAlumnos() {
+        this.todosLosAlumnos = generarDatosDePrueba();
+        this.alumnosFiltrados = new ArrayList<>();
+        this.observadores = new ArrayList<>();
+        this.alumnoSeleccionado = null;
+    }
+
+    @Override
+    public void agregarObservador(IAlumnoObserver o) {
+        if (!observadores.contains(o)) {
+            observadores.add(o);
+        }
+    }
+
+    @Override
+    public void removerObservador(IAlumnoObserver o) {
+        observadores.remove(o);
+    }
+
+    @Override
+    public void notificarObservadores() {
+        for (IAlumnoObserver o : observadores) {
+            o.actualizarListaAlumnos(alumnosFiltrados);
+            o.actualizarDatosAlumno(alumnoSeleccionado);
+        }
+    }
+
+    /**
+     * Filtra los alumnos por coincidencia de texto en su ID y notifica a la vista.
+     * 
+     * @param texto El texto de búsqueda.
+     */
+    public void filtrarAlumnos(String texto) {
+        alumnosFiltrados.clear();
+        alumnoSeleccionado = null;
+
+        if (texto == null || texto.trim().isEmpty()) {
+            notificarObservadores();
+            return; // Lista vacía cuando no hay texto
+        }
+
+        for (Alumno a : todosLosAlumnos) {
+            if (a.getId().contains(texto)) {
+                alumnosFiltrados.add(a);
+            }
+        }
+
+        if (alumnosFiltrados.isEmpty()) {
+            for (IAlumnoObserver o : observadores) {
+                o.mostrarMensaje("No se encontraron alumnos con ID que contenga: " + texto);
+            }
+        }
+
+        notificarObservadores();
+    }
+
+    /**
+     * Selecciona un alumno de la lista actual filtrada y notifica a la vista.
+     * 
+     * @param index El índice en la lista de resultados actuales (-1 para
+     *              deseleccionar).
+     */
+    public void seleccionarAlumno(int index) {
+        if (index >= 0 && index < alumnosFiltrados.size()) {
+            alumnoSeleccionado = alumnosFiltrados.get(index);
+        } else {
+            alumnoSeleccionado = null;
+        }
+        notificarObservadores();
+    }
+
+    /**
+     * Obtiene el alumno actualmente seleccionado.
+     * 
+     * @return El objeto Alumno o null si no hay selección.
+     */
+    public Alumno getAlumnoSeleccionado() {
+        return alumnoSeleccionado;
     }
 
     /**
@@ -24,7 +110,7 @@ public class DatosAlumnos {
      * 
      * @return Un ArrayList de objetos Alumno completamente inicializados.
      */
-    public static ArrayList<Alumno> obtenerAlumnos() {
+    private ArrayList<Alumno> generarDatosDePrueba() {
         ArrayList<Alumno> lista = new ArrayList<>();
 
         // alumno 1

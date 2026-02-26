@@ -45,10 +45,28 @@ package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
         + toString() : String
     }
 
-    class DatosAlumnos {
-        --
-        + {static} obtenerAlumnos() : ArrayList<Alumno>
+    interface IAlumnoObservable {
+        + agregarObservador(o : IAlumnoObserver) : void
+        + removerObservador(o : IAlumnoObserver) : void
+        + notificarObservadores() : void
     }
+
+    class DatosAlumnos {
+        - todosLosAlumnos : ArrayList<Alumno>
+        - alumnosFiltrados : List<Alumno>
+        - alumnoSeleccionado : Alumno
+        - observadores : List<IAlumnoObserver>
+        --
+        + DatosAlumnos()
+        + agregarObservador(o : IAlumnoObserver) : void
+        + removerObservador(o : IAlumnoObserver) : void
+        + notificarObservadores() : void
+        + filtrarAlumnos(texto : String) : void
+        + seleccionarAlumno(index : int) : void
+        + getAlumnoSeleccionado() : Alumno
+    }
+
+    DatosAlumnos .up.|> IAlumnoObservable
 
     Alumno "1" *-right-> "*" Materia : contiene
     DatosAlumnos ..> Alumno : crea
@@ -56,6 +74,12 @@ package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
 }
 
 package "com.mycompany.constanciaalumno.vista" #BBDEFB {
+    interface IAlumnoObserver {
+        + actualizarListaAlumnos(lista : List<Alumno>) : void
+        + actualizarDatosAlumno(alumno : Alumno) : void
+        + mostrarMensaje(mensaje : String) : void
+    }
+
     class VentanaConstancia <<JFrame>> {
         - txtId : JTextField
         - listaAlumnos : JList<String>
@@ -73,21 +97,23 @@ package "com.mycompany.constanciaalumno.vista" #BBDEFB {
         + getTxtInfo() : JTextArea
         + getBtnGenerar() : JButton
         + getScrollInfo() : JScrollPane
+        + actualizarListaAlumnos(lista : List<Alumno>) : void
+        + actualizarDatosAlumno(alumno : Alumno) : void
+        + mostrarMensaje(mensaje : String) : void
+        + renderizarVistaConstancia(alumno : Alumno) : void
     }
+    
+    VentanaConstancia .up.|> IAlumnoObserver
 }
 
 package "com.mycompany.constanciaalumno.controlador" #FFF9C4 {
     class ControladorConstancia {
         - vista : VentanaConstancia
-        - todosLosAlumnos : ArrayList<Alumno>
-        - alumnosFiltrados : ArrayList<Alumno>
-        - alumnoSeleccionado : Alumno
+        - modelo : DatosAlumnos
         --
         + ControladorConstancia(vista : VentanaConstancia)
-        - configurarEventos() : void
+        - inicializarEventos() : void
         - filtrarAlumnos() : void
-        - mostrarDatosAlumno() : void
-        - generarConstancia() : void
     }
 }
 
@@ -99,9 +125,9 @@ package "com.mycompany.constanciaalumno" #F3E5F5 {
 }
 
 ControladorConstancia "1" -left-> "1" VentanaConstancia : vista
-ControladorConstancia "1" --> "*" Alumno : alumnosFiltrados
-ControladorConstancia "1" --> "0..1" Alumno : alumnoSeleccionado
-ControladorConstancia ..> DatosAlumnos : usa
+ControladorConstancia "1" -down-> "1" DatosAlumnos : modelo
+ControladorConstancia ..> Alumno : usa
+IAlumnoObservable -> "*" IAlumnoObserver : notifica
 Main ..> VentanaConstancia : crea
 Main ..> ControladorConstancia : crea
 

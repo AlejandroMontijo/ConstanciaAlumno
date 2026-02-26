@@ -1,16 +1,25 @@
 package com.mycompany.constanciaalumno.vista;
 
+import com.mycompany.constanciaalumno.modelo.Alumno;
+import com.mycompany.constanciaalumno.modelo.Materia;
 import java.awt.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import javax.swing.*;
 
 /**
  * Clase que representa la Interfaz Gráfica de Usuario (Vista) para el módulo de
  * constancias.
  * Define la estructura visual y expone sus componentes al Controlador.
+ * Implementa el Patrón Observer (IAlumnoObserver) para reaccionar a cambios del
+ * Modelo
+ * adhiriéndose a los principios GRASP de Bajo Acoplamiento.
  * 
  * @author alejandro
  */
-public class VentanaConstancia extends JFrame {
+public class VentanaConstancia extends JFrame implements IAlumnoObserver {
 
     private DefaultListModel<String> modeloLista;
 
@@ -23,6 +32,7 @@ public class VentanaConstancia extends JFrame {
         initComponents();
     }
 
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,6 +108,111 @@ public class VentanaConstancia extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    // ==========================================
+    // MÉTODOS DE LA INTERFAZ OBSERVER (Reacción pasiva)
+    // ==========================================
+
+    @Override
+    public void actualizarListaAlumnos(List<Alumno> lista) {
+        modeloLista.clear();
+        for (Alumno a : lista) {
+            modeloLista.addElement(a.toString());
+        }
+    }
+
+    @Override
+    public void actualizarDatosAlumno(Alumno alumno) {
+        if (alumno == null) {
+            txtInfo.setText("");
+            scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
+            btnGenerar.setEnabled(false);
+        } else {
+            StringBuilder sb = new StringBuilder();
+            sb.append("═══════════════════════════════════════\n");
+            sb.append("       DATOS DEL ALUMNO\n");
+            sb.append("═══════════════════════════════════════\n\n");
+            sb.append("  ID:           ").append(alumno.getId()).append("\n");
+            sb.append("  Nombre:       ").append(alumno.getNombreCompleto()).append("\n");
+            sb.append("  Carrera:      ").append(alumno.getCarrera()).append("\n");
+            sb.append("  Semestre:     ").append(alumno.getSemestre()).append("\n");
+            sb.append("  Materias:     ").append(alumno.getCantidadMaterias()).append("\n");
+            sb.append("  Créditos:     ").append(alumno.getTotalCreditos()).append("\n\n");
+
+            sb.append("  MATERIAS INSCRITAS:\n");
+            sb.append("  ─────────────────────────────────\n");
+            for (Materia m : alumno.getMaterias()) {
+                sb.append("  • ").append(m.toString()).append("\n");
+            }
+
+            txtInfo.setText(sb.toString());
+            txtInfo.setCaretPosition(0);
+            scrollInfo.setBorder(BorderFactory.createTitledBorder("Datos de Confirmación"));
+            btnGenerar.setEnabled(true);
+        }
+    }
+
+    @Override
+    public void mostrarMensaje(String mensaje) {
+        txtInfo.setText(mensaje);
+        scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
+    }
+
+    /**
+     * Pinta en el área de texto el formato visual de una constancia oficial.
+     * 
+     * @param alumno El alumno del cual generar la vista de la constancia.
+     */
+    public void renderizarVistaConstancia(Alumno alumno) {
+        if (alumno == null)
+            return;
+
+        scrollInfo.setBorder(BorderFactory.createTitledBorder("Constancia Generada"));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy");
+        String fecha = sdf.format(new Date());
+        Random random = new Random();
+        String folio = "CONST-" + (2026) + "-" + String.format("%06d", random.nextInt(999999));
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("╔═══════════════════════════════════════════════════╗\n");
+        sb.append("║     INSTITUTO TECNOLÓGICO DE SONORA              ║\n");
+        sb.append("║     DIRECCIÓN ACADÉMICA                          ║\n");
+        sb.append("╚═══════════════════════════════════════════════════╝\n\n");
+
+        sb.append("         CONSTANCIA DE ALUMNO INSCRITO\n");
+        sb.append("         ─────────────────────────────\n\n");
+        sb.append("  Ciudad Obregón, Sonora, a ").append(fecha).append("\n\n");
+        sb.append("  A QUIEN CORRESPONDA:\n\n");
+        sb.append("  Por medio de la presente se hace constar que el(la)\n");
+        sb.append("  alumno(a):\n\n");
+        sb.append("     ").append(alumno.getNombreCompleto().toUpperCase()).append("\n\n");
+        sb.append("  Con número de ID: ").append(alumno.getId()).append("\n\n");
+        sb.append("  Se encuentra actualmente inscrito(a) en el programa\n");
+        sb.append("  de ").append(alumno.getCarrera()).append(",\n");
+        sb.append("  cursando el semestre ").append(alumno.getSemestre());
+        sb.append(", con un total de ").append(alumno.getCantidadMaterias());
+        sb.append(" materias\n");
+        sb.append("  y ").append(alumno.getTotalCreditos()).append(" créditos inscritos.\n\n");
+
+        sb.append("  MATERIAS INSCRITAS EN EL PERIODO ACTUAL:\n");
+        sb.append("  ─────────────────────────────────────────\n");
+        for (Materia m : alumno.getMaterias()) {
+            sb.append("    • ").append(m.getClave()).append("  ")
+                    .append(m.getNombre()).append("  (")
+                    .append(m.getCreditos()).append(" cr.)\n");
+        }
+
+        sb.append("\n  Se extiende la presente para los fines que al\n");
+        sb.append("  interesado convengan.\n\n\n");
+        sb.append("  ___________________________________________\n");
+        sb.append("     Director de Servicios Escolares\n");
+        sb.append("     Instituto Tecnológico de Sonora\n\n");
+        sb.append("  Folio: ").append(folio).append("\n");
+
+        txtInfo.setText(sb.toString());
+        txtInfo.setCaretPosition(0);
+    }
 
     /**
      * Obtiene el campo de texto del ID para agregarle eventos o leer su valor.
