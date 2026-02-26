@@ -1,0 +1,116 @@
+@startuml
+skinparam backgroundColor #FEFEFE
+skinparam defaultFontSize 12
+skinparam classFontSize 13
+skinparam classAttributeFontSize 11
+skinparam stereotypeFontSize 10
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #333333
+
+title Diagrama de Clases de Análisis\nConstancia de Alumno Inscrito
+
+skinparam class {
+    BackgroundColor<<boundary>> #BBDEFB
+    BorderColor<<boundary>> #1565C0
+    BackgroundColor<<control>> #FFF9C4
+    BorderColor<<control>> #F57F17
+    BackgroundColor<<entity>> #C8E6C9
+    BorderColor<<entity>> #2E7D32
+}
+
+class VentanaConstancia <<boundary>> {
+    - txtId : JTextField
+    - listaAlumnos : JList<String>
+    - modeloLista : DefaultListModel<String>
+    - txtInfo : JTextArea
+    - btnGenerar : JButton
+    - scrollInfo : JScrollPane
+    --
+    + VentanaConstancia()
+    - initComponents() : void
+    + getTxtId() : JTextField
+    + getListaAlumnos() : JList<String>
+    + getModeloLista() : DefaultListModel<String>
+    + getTxtInfo() : JTextArea
+    + getBtnGenerar() : JButton
+    + getScrollInfo() : JScrollPane
+}
+
+class ControladorConstancia <<control>> {
+    - vista : VentanaConstancia
+    - todosLosAlumnos : ArrayList<Alumno>
+    - alumnosFiltrados : ArrayList<Alumno>
+    - alumnoSeleccionado : Alumno
+    --
+    + ControladorConstancia(vista : VentanaConstancia)
+    - configurarEventos() : void
+    - filtrarAlumnos() : void
+    - mostrarDatosAlumno() : void
+    - generarConstancia() : void
+}
+
+class Alumno <<entity>> {
+    ~ id : String
+    ~ nombre : String
+    ~ apellido : String
+    ~ carrera : String
+    ~ semestre : int
+    ~ materias : ArrayList<Materia>
+    --
+    + Alumno(id, nombre, apellido, carrera, semestre)
+    + agregarMateria(m : Materia) : void
+    + getId() : String
+    + getNombre() : String
+    + getApellido() : String
+    + getNombreCompleto() : String
+    + getCarrera() : String
+    + getSemestre() : int
+    + getMaterias() : ArrayList<Materia>
+    + getCantidadMaterias() : int
+    + getTotalCreditos() : int
+    + toString() : String
+}
+
+class Materia <<entity>> {
+    ~ clave : String
+    ~ nombre : String
+    ~ creditos : int
+    --
+    + Materia(clave, nombre, creditos)
+    + getClave() : String
+    + getNombre() : String
+    + getCreditos() : int
+    + toString() : String
+}
+
+class DatosAlumnos <<entity>> {
+    --
+    + {static} obtenerAlumnos() : ArrayList<Alumno>
+}
+
+ControladorConstancia "1" --> "1" VentanaConstancia : usa >
+ControladorConstancia "1" --> "*" Alumno : gestiona >
+ControladorConstancia "1" --> "1" DatosAlumnos : consulta >
+Alumno "1" *--> "*" Materia : contiene >
+DatosAlumnos ..> Alumno : crea >
+DatosAlumnos ..> Materia : crea >
+
+note top of VentanaConstancia
+  <<boundary>>
+  Interfaz gráfica Swing
+  Solo UI, sin lógica de negocio
+end note
+
+note top of ControladorConstancia
+  <<control>>
+  Maneja toda la lógica:
+  filtrado, selección y
+  generación de constancia
+end note
+
+note bottom of Alumno
+  <<entity>>
+  Datos del alumno
+  con sus materias inscritas
+end note
+@enduml

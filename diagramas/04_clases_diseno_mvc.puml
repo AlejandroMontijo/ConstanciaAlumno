@@ -1,0 +1,125 @@
+@startuml
+skinparam backgroundColor #FEFEFE
+skinparam defaultFontSize 12
+skinparam classFontSize 13
+skinparam classAttributeFontSize 11
+skinparam packageFontSize 14
+skinparam packageStyle frame
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #333333
+
+title Diagrama de Clases de Diseño (MVC)\nConstancia de Alumno Inscrito
+
+package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
+    class Alumno {
+        ~ id : String
+        ~ nombre : String
+        ~ apellido : String
+        ~ carrera : String
+        ~ semestre : int
+        ~ materias : ArrayList<Materia>
+        --
+        + Alumno(id, nombre, apellido, carrera, semestre)
+        + agregarMateria(m : Materia) : void
+        + getId() : String
+        + getNombre() : String
+        + getApellido() : String
+        + getNombreCompleto() : String
+        + getCarrera() : String
+        + getSemestre() : int
+        + getMaterias() : ArrayList<Materia>
+        + getCantidadMaterias() : int
+        + getTotalCreditos() : int
+        + toString() : String
+    }
+
+    class Materia {
+        ~ clave : String
+        ~ nombre : String
+        ~ creditos : int
+        --
+        + Materia(clave, nombre, creditos)
+        + getClave() : String
+        + getNombre() : String
+        + getCreditos() : int
+        + toString() : String
+    }
+
+    class DatosAlumnos {
+        --
+        + {static} obtenerAlumnos() : ArrayList<Alumno>
+    }
+
+    Alumno "1" *-right-> "*" Materia : contiene
+    DatosAlumnos ..> Alumno : crea
+    DatosAlumnos ..> Materia : crea
+}
+
+package "com.mycompany.constanciaalumno.vista" #BBDEFB {
+    class VentanaConstancia <<JFrame>> {
+        - txtId : JTextField
+        - listaAlumnos : JList<String>
+        - modeloLista : DefaultListModel<String>
+        - txtInfo : JTextArea
+        - btnGenerar : JButton
+        - scrollLista : JScrollPane
+        - scrollInfo : JScrollPane
+        --
+        + VentanaConstancia()
+        - initComponents() : void
+        + getTxtId() : JTextField
+        + getListaAlumnos() : JList<String>
+        + getModeloLista() : DefaultListModel<String>
+        + getTxtInfo() : JTextArea
+        + getBtnGenerar() : JButton
+        + getScrollInfo() : JScrollPane
+    }
+}
+
+package "com.mycompany.constanciaalumno.controlador" #FFF9C4 {
+    class ControladorConstancia {
+        - vista : VentanaConstancia
+        - todosLosAlumnos : ArrayList<Alumno>
+        - alumnosFiltrados : ArrayList<Alumno>
+        - alumnoSeleccionado : Alumno
+        --
+        + ControladorConstancia(vista : VentanaConstancia)
+        - configurarEventos() : void
+        - filtrarAlumnos() : void
+        - mostrarDatosAlumno() : void
+        - generarConstancia() : void
+    }
+}
+
+package "com.mycompany.constanciaalumno" #F3E5F5 {
+    class Main {
+        --
+        + {static} main(args : String[]) : void
+    }
+}
+
+ControladorConstancia "1" -left-> "1" VentanaConstancia : vista
+ControladorConstancia "1" --> "*" Alumno : alumnosFiltrados
+ControladorConstancia "1" --> "0..1" Alumno : alumnoSeleccionado
+ControladorConstancia ..> DatosAlumnos : usa
+Main ..> VentanaConstancia : crea
+Main ..> ControladorConstancia : crea
+
+note bottom of "com.mycompany.constanciaalumno.modelo"
+  **MODEL** - Capa de datos
+  Entidades del dominio y
+  acceso a datos
+end note
+
+note bottom of "com.mycompany.constanciaalumno.vista"
+  **VIEW** - Capa de presentación
+  Solo componentes Swing,
+  sin lógica de negocio
+end note
+
+note bottom of "com.mycompany.constanciaalumno.controlador"
+  **CONTROLLER** - Capa de control
+  Lógica de negocio, eventos
+  y coordinación MVC
+end note
+@enduml

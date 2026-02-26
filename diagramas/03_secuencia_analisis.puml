@@ -1,0 +1,117 @@
+@startuml
+skinparam backgroundColor #FEFEFE
+skinparam defaultFontSize 12
+skinparam sequenceMessageFontSize 12
+skinparam sequenceParticipantFontSize 12
+skinparam sequenceArrowThickness 2
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 200
+
+skinparam participant {
+    BackgroundColor<<boundary>> #BBDEFB
+    BorderColor<<boundary>> #1565C0
+    BackgroundColor<<control>> #FFF9C4
+    BorderColor<<control>> #F57F17
+    BackgroundColor<<entity>> #C8E6C9
+    BorderColor<<entity>> #2E7D32
+}
+
+title Diagrama de Secuencia de Análisis\nFlujo Básico - Generar Constancia de Alumno Inscrito
+
+actor "Personal\nAdministrativo" as Actor
+
+participant "VentanaConstancia\n<<boundary>>" as Vista <<boundary>>
+participant "ControladorConstancia\n<<control>>" as Ctrl <<control>>
+participant "DatosAlumnos\n<<entity>>" as Datos <<entity>>
+participant "Alumno\n<<entity>>" as Alumno <<entity>>
+
+== Inicialización ==
+Actor -> Vista : Abre la aplicación
+activate Vista
+Vista -> Ctrl : Se crea el controlador
+activate Ctrl
+Ctrl -> Datos : obtenerAlumnos()
+activate Datos
+Datos --> Ctrl : ArrayList<Alumno>
+deactivate Datos
+Ctrl -> Ctrl : configurarEventos()
+Ctrl --> Vista : Eventos registrados
+deactivate Ctrl
+
+== Búsqueda Incremental por ID ==
+Actor -> Vista : Escribe "000123" en txtId
+Vista -> Ctrl : DocumentListener.insertUpdate()
+activate Ctrl
+Ctrl -> Ctrl : filtrarAlumnos()
+
+loop Para cada Alumno en todosLosAlumnos
+    Ctrl -> Alumno : getId()
+    activate Alumno
+    Alumno --> Ctrl : id
+    deactivate Alumno
+    Ctrl -> Ctrl : id.contains("000123")?
+end
+
+Ctrl -> Vista : modeloLista.addElement()\npara cada match
+Ctrl --> Vista : Lista actualizada con 2 alumnos
+deactivate Ctrl
+
+== Selección de Alumno ==
+Actor -> Vista : Selecciona "000123456 - Carlos García"
+Vista -> Ctrl : ListSelectionListener.valueChanged()
+activate Ctrl
+Ctrl -> Ctrl : alumnoSeleccionado = alumnosFiltrados.get(index)
+Ctrl -> Ctrl : mostrarDatosAlumno()
+Ctrl -> Alumno : getNombreCompleto()
+activate Alumno
+Alumno --> Ctrl : "Carlos García López"
+deactivate Alumno
+Ctrl -> Alumno : getCarrera()
+activate Alumno
+Alumno --> Ctrl : "Ingeniería en Software"
+deactivate Alumno
+Ctrl -> Alumno : getSemestre()
+activate Alumno
+Alumno --> Ctrl : 5
+deactivate Alumno
+Ctrl -> Alumno : getCantidadMaterias()
+activate Alumno
+Alumno --> Ctrl : 5
+deactivate Alumno
+Ctrl -> Alumno : getMaterias()
+activate Alumno
+Alumno --> Ctrl : ArrayList<Materia>
+deactivate Alumno
+Ctrl -> Vista : txtInfo.setText(datos formateados)
+Ctrl -> Vista : btnGenerar.setEnabled(true)
+deactivate Ctrl
+
+== Generación de Constancia ==
+Actor -> Vista : Clic en "Generar Constancia"
+Vista -> Ctrl : ActionListener.actionPerformed()
+activate Ctrl
+Ctrl -> Ctrl : generarConstancia()
+Ctrl -> Alumno : getNombreCompleto()
+activate Alumno
+Alumno --> Ctrl : "Carlos García López"
+deactivate Alumno
+Ctrl -> Alumno : getId()
+activate Alumno
+Alumno --> Ctrl : "000123456"
+deactivate Alumno
+Ctrl -> Alumno : getCarrera(), getSemestre(),\ngetCantidadMaterias(), getTotalCreditos()
+activate Alumno
+Alumno --> Ctrl : datos del alumno
+deactivate Alumno
+Ctrl -> Alumno : getMaterias()
+activate Alumno
+Alumno --> Ctrl : lista de materias
+deactivate Alumno
+Ctrl -> Ctrl : Genera folio aleatorio\nCONST-2026-XXXXXX
+Ctrl -> Vista : txtInfo.setText(constancia formateada)
+Ctrl -> Vista : scrollInfo.setBorder("Constancia Generada")
+deactivate Ctrl
+
+Actor <-- Vista : Se muestra la constancia\nen pantalla
+deactivate Vista
+@enduml

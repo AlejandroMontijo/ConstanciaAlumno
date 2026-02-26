@@ -1,0 +1,48 @@
+@startuml
+skinparam backgroundColor #FEFEFE
+skinparam defaultFontSize 13
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseFontSize 12
+skinparam usecaseBackgroundColor #E8F5E9
+skinparam usecaseBorderColor #2E7D32
+skinparam actorBackgroundColor #E3F2FD
+skinparam actorBorderColor #1565C0
+skinparam rectangleBackgroundColor #FFF8E1
+skinparam rectangleBorderColor #F57F17
+
+title Diagrama de Casos de Uso\nConstancia de Alumno Inscrito
+
+actor "Personal\nAdministrativo" as admin #E3F2FD
+
+rectangle "Sistema de Constancias - ITSON" {
+    usecase "CU-01\nBuscar Alumno\npor ID" as UC1
+    usecase "CU-02\nSeleccionar\nAlumno" as UC2
+    usecase "CU-03\nConsultar Datos\ndel Alumno" as UC3
+    usecase "CU-04\nGenerar\nConstancia" as UC4
+}
+
+admin --> UC1
+admin --> UC2
+admin --> UC3
+admin --> UC4
+
+UC2 ..> UC1 : <<include>>
+UC3 ..> UC2 : <<include>>
+UC4 ..> UC3 : <<include>>
+
+note right of UC1
+  Búsqueda incremental:
+  A medida que se escribe el ID,
+  se filtran los alumnos en
+  tiempo real.
+end note
+
+note right of UC4
+  Genera constancia oficial con:
+  - Encabezado ITSON
+  - Datos del alumno
+  - Materias inscritas
+  - Folio único
+end note
+@enduml

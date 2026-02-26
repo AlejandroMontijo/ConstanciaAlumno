@@ -1,0 +1,144 @@
+@startuml
+skinparam backgroundColor #FEFEFE
+skinparam defaultFontSize 11
+skinparam sequenceMessageFontSize 11
+skinparam sequenceParticipantFontSize 11
+skinparam sequenceArrowThickness 2
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 250
+
+skinparam participant {
+    BackgroundColor #FFFFFF
+    BorderColor #333333
+}
+
+title Diagrama de Secuencia de Diseño (MVC)\nFlujo Básico - Generar Constancia
+
+actor "Personal\nAdministrativo" as Actor
+
+participant "Main" as Main #F3E5F5
+participant "VentanaConstancia\n[Vista]" as Vista #BBDEFB
+participant "ControladorConstancia\n[Controlador]" as Ctrl #FFF9C4
+participant "DatosAlumnos\n[Modelo]" as Datos #C8E6C9
+participant "Alumno\n[Modelo]" as Alumno #C8E6C9
+participant "Materia\n[Modelo]" as Materia #C8E6C9
+
+== 1. Inicialización del Sistema ==
+Actor -> Main : Ejecuta la aplicación
+activate Main
+Main -> Main : UIManager.setLookAndFeel()
+Main -> Vista : new VentanaConstancia()
+activate Vista
+Vista -> Vista : initComponents()
+note right : Crea JTextField, JList,\nJTextArea, JButton,\nJScrollPanes y layout\ncon BorderLayout
+Vista --> Main : vista creada
+Main -> Ctrl : new ControladorConstancia(vista)
+activate Ctrl
+Ctrl -> Datos : obtenerAlumnos()
+activate Datos
+Datos -> Alumno : new Alumno("000123456", ...)
+activate Alumno
+Alumno -> Materia : new Materia("ISW-401", ...)
+activate Materia
+Materia --> Alumno : materia
+deactivate Materia
+Alumno --> Datos : alumno con materias
+deactivate Alumno
+note right of Datos : Crea 8 alumnos\ncon sus materias
+Datos --> Ctrl : ArrayList<Alumno> (8 alumnos)
+deactivate Datos
+Ctrl -> Ctrl : configurarEventos()
+note right : Registra:\n- DocumentListener en txtId\n- ListSelectionListener en listaAlumnos\n- ActionListener en btnGenerar
+Ctrl --> Main : controlador listo
+Main -> Vista : setVisible(true)
+deactivate Ctrl
+deactivate Main
+
+== 2. Búsqueda Incremental por ID ==
+Actor -> Vista : Escribe "000123" en txtId
+Vista -> Ctrl : DocumentListener\ninsertUpdate(DocumentEvent)
+activate Ctrl
+Ctrl -> Vista : getTxtId().getText()
+Vista --> Ctrl : "000123"
+Ctrl -> Ctrl : filtrarAlumnos()
+Ctrl -> Vista : getModeloLista().clear()
+Ctrl -> Ctrl : alumnosFiltrados.clear()
+
+loop por cada alumno en todosLosAlumnos
+    Ctrl -> Alumno : getId()
+    Alumno --> Ctrl : "000123456"
+    Ctrl -> Ctrl : "000123456".contains("000123") → true
+    Ctrl -> Ctrl : alumnosFiltrados.add(alumno)
+    Ctrl -> Vista : getModeloLista().addElement(\n"000123456 - Carlos García López")
+end
+
+note right : Resultado: 2 alumnos\nhacen match con "000123"
+deactivate Ctrl
+
+== 3. Selección de Alumno ==
+Actor -> Vista : Selecciona primer alumno de la lista
+Vista -> Ctrl : ListSelectionListener\nvalueChanged(ListSelectionEvent)
+activate Ctrl
+Ctrl -> Vista : getListaAlumnos().getSelectedIndex()
+Vista --> Ctrl : 0
+Ctrl -> Ctrl : alumnoSeleccionado =\nalumnosFiltrados.get(0)
+Ctrl -> Ctrl : mostrarDatosAlumno()
+
+group Construir datos de confirmación
+    Ctrl -> Alumno : getId()
+    Alumno --> Ctrl : "000123456"
+    Ctrl -> Alumno : getNombreCompleto()
+    Alumno --> Ctrl : "Carlos García López"
+    Ctrl -> Alumno : getCarrera()
+    Alumno --> Ctrl : "Ingeniería en Software"
+    Ctrl -> Alumno : getSemestre()
+    Alumno --> Ctrl : 5
+    Ctrl -> Alumno : getCantidadMaterias()
+    Alumno --> Ctrl : 5
+    Ctrl -> Alumno : getTotalCreditos()
+    Alumno --> Ctrl : 36
+    Ctrl -> Alumno : getMaterias()
+    Alumno --> Ctrl : ArrayList<Materia>
+end
+
+Ctrl -> Vista : getScrollInfo().setBorder(\n"Datos de Confirmación")
+Ctrl -> Vista : getTxtInfo().setText(datos formateados)
+Ctrl -> Vista : getBtnGenerar().setEnabled(true)
+deactivate Ctrl
+
+== 4. Generación de Constancia ==
+Actor -> Vista : Clic en botón "Generar Constancia"
+Vista -> Ctrl : ActionListener\nactionPerformed(ActionEvent)
+activate Ctrl
+Ctrl -> Ctrl : generarConstancia()
+Ctrl -> Vista : getScrollInfo().setBorder(\n"Constancia Generada")
+
+group Construir constancia formal
+    Ctrl -> Ctrl : new SimpleDateFormat(...)\n.format(new Date())
+    Ctrl -> Ctrl : folio = "CONST-2026-"\n+ random.nextInt(999999)
+    Ctrl -> Alumno : getNombreCompleto().toUpperCase()
+    Alumno --> Ctrl : "CARLOS GARCÍA LÓPEZ"
+    Ctrl -> Alumno : getId()
+    Alumno --> Ctrl : "000123456"
+    Ctrl -> Alumno : getCarrera(), getSemestre(),\ngetCantidadMaterias(), getTotalCreditos()
+    Alumno --> Ctrl : datos completos
+    Ctrl -> Alumno : getMaterias()
+    Alumno --> Ctrl : ArrayList<Materia>
+
+    loop por cada materia
+        Ctrl -> Materia : getClave()
+        Materia --> Ctrl : "ISW-401"
+        Ctrl -> Materia : getNombre()
+        Materia --> Ctrl : "Programación III"
+        Ctrl -> Materia : getCreditos()
+        Materia --> Ctrl : 8
+    end
+end
+
+Ctrl -> Vista : getTxtInfo().setText(\nconstancia completa)
+Ctrl -> Vista : getTxtInfo().setCaretPosition(0)
+deactivate Ctrl
+
+Actor <-- Vista : Se muestra la constancia\noficial en pantalla
+deactivate Vista
+@enduml
