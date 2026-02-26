@@ -72,7 +72,7 @@ loop por cada alumno en todosLosAlumnos
 end
 
 Datos -> Datos : notificarObservadores()
-Datos -> Vista : <<IAlumnoObserver>>\nactualizarListaAlumnos(alumnosFiltrados)
+Datos -> Vista : <<IAlumnoObserver>>\nactualizar(this)
 activate Vista
 Vista -> Vista : modeloLista.clear()
 loop por cada alumno filtrado
@@ -96,7 +96,7 @@ activate Datos
 Datos -> Datos : alumnoSeleccionado =\nalumnosFiltrados.get(0)
 
 Datos -> Datos : notificarObservadores()
-Datos -> Vista : <<IAlumnoObserver>>\nactualizarDatosAlumno(alumnoSeleccionado)
+Datos -> Vista : <<IAlumnoObserver>>\nactualizar(this)
 activate Vista
 group Construir datos de confirmación
     Vista -> Alumno : getId(), getNombreCompleto()...
@@ -114,12 +114,12 @@ deactivate Ctrl
 Actor -> Vista : Clic en botón "Generar Constancia"
 Vista -> Ctrl : ActionListener\nactionPerformed(ActionEvent)
 activate Ctrl
-Ctrl -> Datos : getAlumnoSeleccionado()
-Datos --> Ctrl : alumnoSeleccionado
-Ctrl -> Vista : renderizarVistaConstancia(alumnoSeleccionado)
+Ctrl -> Vista : renderizarVistaConstancia(modelo)
 activate Vista
 group Construir constancia formal
     Vista -> Vista : SimpleDateFormat.format(new Date())
+    Vista -> Datos : getAlumnoSeleccionado()
+    Datos --> Vista : alumnoSeleccionado
     Vista -> Alumno : getNombreCompleto(), getId()...
     Alumno --> Vista : datos completos
     

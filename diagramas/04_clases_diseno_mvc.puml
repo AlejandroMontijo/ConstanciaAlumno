@@ -49,6 +49,9 @@ package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
         + agregarObservador(o : IAlumnoObserver) : void
         + removerObservador(o : IAlumnoObserver) : void
         + notificarObservadores() : void
+        + getAlumnosFiltrados() : List<Alumno>
+        + getAlumnoSeleccionado() : Alumno
+        + getMensajeBusqueda() : String
     }
 
     class DatosAlumnos {
@@ -75,9 +78,7 @@ package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
 
 package "com.mycompany.constanciaalumno.vista" #BBDEFB {
     interface IAlumnoObserver {
-        + actualizarListaAlumnos(lista : List<Alumno>) : void
-        + actualizarDatosAlumno(alumno : Alumno) : void
-        + mostrarMensaje(mensaje : String) : void
+        + actualizar(observable : IAlumnoObservable) : void
     }
 
     class VentanaConstancia <<JFrame>> {
@@ -97,10 +98,8 @@ package "com.mycompany.constanciaalumno.vista" #BBDEFB {
         + getTxtInfo() : JTextArea
         + getBtnGenerar() : JButton
         + getScrollInfo() : JScrollPane
-        + actualizarListaAlumnos(lista : List<Alumno>) : void
-        + actualizarDatosAlumno(alumno : Alumno) : void
-        + mostrarMensaje(mensaje : String) : void
-        + renderizarVistaConstancia(alumno : Alumno) : void
+        + actualizar(observable : IAlumnoObservable) : void
+        + renderizarVistaConstancia(observable : IAlumnoObservable) : void
     }
     
     VentanaConstancia .up.|> IAlumnoObserver

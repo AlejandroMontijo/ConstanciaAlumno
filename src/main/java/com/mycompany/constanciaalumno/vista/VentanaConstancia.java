@@ -121,15 +121,24 @@ public class VentanaConstancia extends JFrame implements IAlumnoObserver {
     // ==========================================
 
     @Override
-    public void actualizarListaAlumnos(List<Alumno> lista) {
+    public void actualizar(com.mycompany.constanciaalumno.modelo.IAlumnoObservable observable) {
+        // 1. Dibuja la lista usando el estado extraído
         modeloLista.clear();
-        for (Alumno a : lista) {
+        for (Alumno a : observable.getAlumnosFiltrados()) {
             modeloLista.addElement(a.toString());
         }
-    }
 
-    @Override
-    public void actualizarDatosAlumno(Alumno alumno) {
+        // 2. Si no hubo resultados o hay un mensaje de validación, pintar mensaje
+        String mensaje = observable.getMensajeBusqueda();
+        if (mensaje != null && !mensaje.isEmpty()) {
+            txtInfo.setText(mensaje);
+            scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
+            btnGenerar.setEnabled(false);
+            return;
+        }
+
+        // 3. Pintar detalle del alumno seleccionado si lo hay
+        Alumno alumno = observable.getAlumnoSeleccionado();
         if (alumno == null) {
             txtInfo.setText("");
             scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
@@ -159,18 +168,13 @@ public class VentanaConstancia extends JFrame implements IAlumnoObserver {
         }
     }
 
-    @Override
-    public void mostrarMensaje(String mensaje) {
-        txtInfo.setText(mensaje);
-        scrollInfo.setBorder(BorderFactory.createTitledBorder("Información del Alumno"));
-    }
-
     /**
      * Pinta en el área de texto el formato visual de una constancia oficial.
      * 
-     * @param alumno El alumno del cual generar la vista de la constancia.
+     * @param observable El observable que contiene al alumno seleccionado.
      */
-    public void renderizarVistaConstancia(Alumno alumno) {
+    public void renderizarVistaConstancia(com.mycompany.constanciaalumno.modelo.IAlumnoObservable observable) {
+        Alumno alumno = observable.getAlumnoSeleccionado();
         if (alumno == null)
             return;
 

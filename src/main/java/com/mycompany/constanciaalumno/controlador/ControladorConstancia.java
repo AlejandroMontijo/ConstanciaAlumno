@@ -69,7 +69,7 @@ public class ControladorConstancia {
 
         // Evento 3: Botón Generar Constancia
         vista.getBtnGenerar().addActionListener(e -> {
-            vista.renderizarVistaConstancia(modelo.getAlumnoSeleccionado());
+            vista.renderizarVistaConstancia(modelo);
         });
     }
 

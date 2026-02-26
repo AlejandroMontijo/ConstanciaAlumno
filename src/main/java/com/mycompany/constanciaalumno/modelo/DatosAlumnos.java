@@ -16,6 +16,7 @@ public class DatosAlumnos implements IAlumnoObservable {
     private ArrayList<Alumno> todosLosAlumnos;
     private List<Alumno> alumnosFiltrados;
     private Alumno alumnoSeleccionado;
+    private String mensajeBusqueda = "";
 
     // Lista de vistas/observadores suscritos
     private List<IAlumnoObserver> observadores;
@@ -28,6 +29,21 @@ public class DatosAlumnos implements IAlumnoObservable {
         this.alumnosFiltrados = new ArrayList<>();
         this.observadores = new ArrayList<>();
         this.alumnoSeleccionado = null;
+    }
+
+    @Override
+    public List<Alumno> getAlumnosFiltrados() {
+        return alumnosFiltrados;
+    }
+
+    @Override
+    public Alumno getAlumnoSeleccionado() {
+        return alumnoSeleccionado;
+    }
+
+    @Override
+    public String getMensajeBusqueda() {
+        return mensajeBusqueda;
     }
 
     @Override
@@ -45,8 +61,7 @@ public class DatosAlumnos implements IAlumnoObservable {
     @Override
     public void notificarObservadores() {
         for (IAlumnoObserver o : observadores) {
-            o.actualizarListaAlumnos(alumnosFiltrados);
-            o.actualizarDatosAlumno(alumnoSeleccionado);
+            o.actualizar(this); // Polymorphism
         }
     }
 
@@ -71,9 +86,9 @@ public class DatosAlumnos implements IAlumnoObservable {
         }
 
         if (alumnosFiltrados.isEmpty()) {
-            for (IAlumnoObserver o : observadores) {
-                o.mostrarMensaje("No se encontraron alumnos con ID que contenga: " + texto);
-            }
+            mensajeBusqueda = "No se encontraron alumnos con ID que contenga: " + texto;
+        } else {
+            mensajeBusqueda = "";
         }
 
         notificarObservadores();
@@ -92,15 +107,6 @@ public class DatosAlumnos implements IAlumnoObservable {
             alumnoSeleccionado = null;
         }
         notificarObservadores();
-    }
-
-    /**
-     * Obtiene el alumno actualmente seleccionado.
-     * 
-     * @return El objeto Alumno o null si no hay selección.
-     */
-    public Alumno getAlumnoSeleccionado() {
-        return alumnoSeleccionado;
     }
 
     /**
