@@ -3,11 +3,27 @@ package com.mycompany.constanciaalumno.modelo;
 import java.util.ArrayList;
 
 /**
+ * Esta clase provee un repositorio estático de datos de prueba para los
+ * alumnos.
+ * Simula el acceso a una base de datos.
+ * 
  * @author alejandro
  */
 public class DatosAlumnos {
 
-    // datos de prueba hardcodeados
+    /**
+     * Constructor por defecto de la clase DatosAlumnos.
+     */
+    public DatosAlumnos() {
+    }
+
+    /**
+     * Genera y devuelve una lista predefinida (hardcodeada) de alumnos con sus
+     * respectivas materias
+     * para realizar pruebas en la aplicación.
+     * 
+     * @return Un ArrayList de objetos Alumno completamente inicializados.
+     */
     public static ArrayList<Alumno> obtenerAlumnos() {
         ArrayList<Alumno> lista = new ArrayList<>();
 

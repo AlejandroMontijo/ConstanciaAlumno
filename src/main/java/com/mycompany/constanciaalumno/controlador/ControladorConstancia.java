@@ -13,6 +13,10 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 /**
+ * Controlador principal del patrón Arquitectónico MVC.
+ * Gestiona la interacción entre la Vista (VentanaConstancia) y el Modelo
+ * (DatosAlumnos, Alumno, Materia).
+ * 
  * @author alejandro
  */
 public class ControladorConstancia {
@@ -22,6 +26,12 @@ public class ControladorConstancia {
     private ArrayList<Alumno> alumnosFiltrados;
     private Alumno alumnoSeleccionado;
 
+    /**
+     * Construye y vincula el controlador a una vista específica.
+     * Carga los datos iniciales y configura los oyentes de eventos.
+     * 
+     * @param vista La instancia de VentanaConstancia a gestionar.
+     */
     public ControladorConstancia(VentanaConstancia vista) {
         this.vista = vista;
         this.todosLosAlumnos = DatosAlumnos.obtenerAlumnos();

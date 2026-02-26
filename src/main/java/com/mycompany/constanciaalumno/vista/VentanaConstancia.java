@@ -4,19 +4,27 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
+ * Clase que representa la Interfaz Gráfica de Usuario (Vista) para el módulo de
+ * constancias.
+ * Define la estructura visual y expone sus componentes al Controlador.
+ * 
  * @author alejandro
  */
 public class VentanaConstancia extends JFrame {
 
     private DefaultListModel<String> modeloLista;
 
+    /**
+     * Construye una nueva ventana, inicializa el modelo de la lista
+     * y carga los componentes gráficos generados por el diseñador de NetBeans.
+     */
     public VentanaConstancia() {
         modeloLista = new DefaultListModel<>();
         initComponents();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         panelIzquierdo = new javax.swing.JPanel();
@@ -91,27 +99,59 @@ public class VentanaConstancia extends JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    // getters para que el controlador acceda a los componentes
+    /**
+     * Obtiene el campo de texto del ID para agregarle eventos o leer su valor.
+     * 
+     * @return El componente JTextField del ID.
+     */
     public JTextField getTxtId() {
         return txtId;
     }
 
+    /**
+     * Obtiene la lista gráfica donde se muestran los alumnos filtrados.
+     * 
+     * @return El componente JList de la interfaz.
+     */
     public JList<String> getListaAlumnos() {
         return listaAlumnos;
     }
 
+    /**
+     * Obtiene el modelo de datos vinculado a la lista gráfica.
+     * 
+     * @return El DefaultListModel que alimenta al JList.
+     */
     public DefaultListModel<String> getModeloLista() {
         return modeloLista;
     }
 
+    /**
+     * Obtiene el área de texto donde se muestra la constancia generada o la
+     * información confirmada.
+     * 
+     * @return El componente JTextArea de la interfaz.
+     */
     public JTextArea getTxtInfo() {
         return txtInfo;
     }
 
+    /**
+     * Obtiene el botón principal de generación para asociarle sus ActionListeners
+     * en el Controlador.
+     * 
+     * @return El componente JButton de generación.
+     */
     public JButton getBtnGenerar() {
         return btnGenerar;
     }
 
+    /**
+     * Obtiene el contenedor desplazable del área de información (generalmente para
+     * cambiar el título del borde).
+     * 
+     * @return El JScrollPane que contiene a txtInfo.
+     */
     public JScrollPane getScrollInfo() {
         return scrollInfo;
     }
