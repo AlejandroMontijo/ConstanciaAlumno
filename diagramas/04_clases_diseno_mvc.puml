@@ -12,12 +12,12 @@ title Diagrama de Clases de Diseño (MVC)\nConstancia de Alumno Inscrito
 
 package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
     class Alumno {
-        ~ id : String
-        ~ nombre : String
-        ~ apellido : String
-        ~ carrera : String
-        ~ semestre : int
-        ~ materias : ArrayList<Materia>
+        - id : String
+        - nombre : String
+        - apellido : String
+        - carrera : String
+        - semestre : int
+        - materias : ArrayList<Materia>
         --
         + Alumno(id, nombre, apellido, carrera, semestre)
         + agregarMateria(m : Materia) : void
@@ -27,16 +27,16 @@ package "com.mycompany.constanciaalumno.modelo" #E8F5E9 {
         + getNombreCompleto() : String
         + getCarrera() : String
         + getSemestre() : int
-        + getMaterias() : ArrayList<Materia>
+        + getMaterias() : List<Materia>
         + getCantidadMaterias() : int
         + getTotalCreditos() : int
         + toString() : String
     }
 
     class Materia {
-        ~ clave : String
-        ~ nombre : String
-        ~ creditos : int
+        - clave : String
+        - nombre : String
+        - creditos : int
         --
         + Materia(clave, nombre, creditos)
         + getClave() : String

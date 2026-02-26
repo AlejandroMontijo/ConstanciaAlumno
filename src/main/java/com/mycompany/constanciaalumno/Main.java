@@ -4,7 +4,6 @@ import com.formdev.flatlaf.FlatLightLaf;
 import com.mycompany.constanciaalumno.controlador.ControladorConstancia;
 import com.mycompany.constanciaalumno.vista.VentanaConstancia;
 import java.awt.Color;
-import java.awt.Font;
 import javax.swing.*;
 
 /**

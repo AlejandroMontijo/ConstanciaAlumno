@@ -1,6 +1,8 @@
 package com.mycompany.constanciaalumno.modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Clase que representa a un estudiante inscrito en el instituto.
@@ -10,12 +12,12 @@ import java.util.ArrayList;
  */
 public class Alumno {
 
-    String id;
-    String nombre;
-    String apellido;
-    String carrera;
-    int semestre;
-    ArrayList<Materia> materias;
+    private String id;
+    private String nombre;
+    private String apellido;
+    private String carrera;
+    private int semestre;
+    private ArrayList<Materia> materias;
 
     /**
      * Construye una nueva instancia de Alumno con validaciones estrictas.
@@ -121,8 +123,8 @@ public class Alumno {
      * 
      * @return Un ArrayList de objetos Materia.
      */
-    public ArrayList<Materia> getMaterias() {
-        return materias;
+    public List<Materia> getMaterias() {
+        return Collections.unmodifiableList(materias);
     }
 
     /**

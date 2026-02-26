@@ -2,6 +2,7 @@ package com.mycompany.constanciaalumno.modelo;
 
 import com.mycompany.constanciaalumno.vista.IAlumnoObserver;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public class DatosAlumnos implements IAlumnoObservable {
 
     @Override
     public List<Alumno> getAlumnosFiltrados() {
-        return alumnosFiltrados;
+        return Collections.unmodifiableList(alumnosFiltrados);
     }
 
     @Override

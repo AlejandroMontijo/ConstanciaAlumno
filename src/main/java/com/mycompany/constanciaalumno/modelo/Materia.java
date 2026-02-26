@@ -8,9 +8,9 @@ package com.mycompany.constanciaalumno.modelo;
  */
 public class Materia {
 
-    String clave;
-    String nombre;
-    int creditos;
+    private String clave;
+    private String nombre;
+    private int creditos;
 
     /**
      * Construye un nuevo objeto Materia con validación de datos.
