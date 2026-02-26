@@ -15,6 +15,21 @@ public class Alumno {
     ArrayList<Materia> materias;
 
     public Alumno(String id, String nombre, String apellido, String carrera, int semestre) {
+        if (id == null || id.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID del alumno no puede estar vacío.");
+        }
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del alumno no puede estar vacío.");
+        }
+        if (apellido == null || apellido.trim().isEmpty()) {
+            throw new IllegalArgumentException("El apellido del alumno no puede estar vacío.");
+        }
+        if (carrera == null || carrera.trim().isEmpty()) {
+            throw new IllegalArgumentException("La carrera del alumno no puede estar vacía.");
+        }
+        if (semestre <= 0) {
+            throw new IllegalArgumentException("El semestre debe ser mayor a cero.");
+        }
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
