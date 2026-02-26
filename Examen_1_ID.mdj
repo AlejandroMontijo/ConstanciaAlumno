@@ -1,493 +1,916 @@
 {
   "_type": "Project",
-  "_id": "AAAAAAFF+qBWK6M3Z8IkBAg=",
+  "_id": "Qzx9Jv12C77qCaXm9usczQ==",
   "name": "Examen_1_ID",
   "ownedElements": [
     {
       "_type": "UMLModel",
-      "_id": "AAAAAAFF+qBWK6M3Z8IkBAh=",
-      "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAg=" },
+      "_id": "hsFSp2PzJSiLVun8j+/VSg==",
+      "_parent": {
+        "$ref": "Qzx9Jv12C77qCaXm9usczQ=="
+      },
       "name": "Vista de Escenarios",
       "ownedElements": [
         {
           "_type": "UMLUseCaseDiagram",
-          "_id": "UC_DIAGRAM_001",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "name": "Diagrama de Casos de Uso - Constancia de Alumno Inscrito",
+          "_id": "DIAG_UC_1",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
+          "name": "Diagrama de Casos de Uso",
+          "defaultDiagram": true,
           "ownedViews": [
             {
               "_type": "UMLActorView",
-              "_id": "AV_001",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "ACTOR_001" },
-              "left": 50,
+              "_id": "ckKw2N17wbw6tzgy63ifnA==",
+              "_parent": {
+                "$ref": "DIAG_UC_1"
+              },
+              "model": {
+                "$ref": "ZJbhQuY8KvIs35Q6dAzy8g=="
+              },
+              "left": 100,
               "top": 200,
               "width": 80,
-              "height": 100
+              "height": 100,
+              "font": "Arial;13;0"
             },
             {
               "_type": "UMLUseCaseView",
-              "_id": "UCV_001",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "UC_001" },
-              "left": 250,
+              "_id": "RhVB2Cm98gtmwuxC15V5KA==",
+              "_parent": {
+                "$ref": "DIAG_UC_1"
+              },
+              "model": {
+                "$ref": "GzIK6M+yuSKtQQg1eambLQ=="
+              },
+              "left": 300,
               "top": 50,
-              "width": 200,
-              "height": 60
+              "width": 160,
+              "height": 50,
+              "font": "Arial;13;0"
             },
             {
               "_type": "UMLUseCaseView",
-              "_id": "UCV_002",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "UC_002" },
-              "left": 250,
+              "_id": "A3hn7+RKwJ6dFD4MY+rU9g==",
+              "_parent": {
+                "$ref": "DIAG_UC_1"
+              },
+              "model": {
+                "$ref": "vEQkFmY7BQ2kNxVWFwI0zw=="
+              },
+              "left": 300,
               "top": 150,
-              "width": 200,
-              "height": 60
+              "width": 160,
+              "height": 50,
+              "font": "Arial;13;0"
             },
             {
               "_type": "UMLUseCaseView",
-              "_id": "UCV_003",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "UC_003" },
-              "left": 250,
+              "_id": "wuTRptSCTdDMlXf0Jd+irw==",
+              "_parent": {
+                "$ref": "DIAG_UC_1"
+              },
+              "model": {
+                "$ref": "bXtAaDpqqT6HkUapzwcxDA=="
+              },
+              "left": 300,
               "top": 250,
-              "width": 200,
-              "height": 60
+              "width": 160,
+              "height": 50,
+              "font": "Arial;13;0"
             },
             {
               "_type": "UMLUseCaseView",
-              "_id": "UCV_004",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "UC_004" },
-              "left": 250,
+              "_id": "jvYYV1UwJgnlnGcozXrr0A==",
+              "_parent": {
+                "$ref": "DIAG_UC_1"
+              },
+              "model": {
+                "$ref": "2hiiD+N40laLLTlYWaUslA=="
+              },
+              "left": 300,
               "top": 350,
-              "width": 200,
-              "height": 60
-            },
-            {
-              "_type": "UMLAssociationView",
-              "_id": "ASSOC_V1",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "ASSOC_001" },
-              "head": { "$ref": "UCV_001" },
-              "tail": { "$ref": "AV_001" }
-            },
-            {
-              "_type": "UMLAssociationView",
-              "_id": "ASSOC_V2",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "ASSOC_002" },
-              "head": { "$ref": "UCV_002" },
-              "tail": { "$ref": "AV_001" }
-            },
-            {
-              "_type": "UMLAssociationView",
-              "_id": "ASSOC_V3",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "ASSOC_003" },
-              "head": { "$ref": "UCV_003" },
-              "tail": { "$ref": "AV_001" }
-            },
-            {
-              "_type": "UMLAssociationView",
-              "_id": "ASSOC_V4",
-              "_parent": { "$ref": "UC_DIAGRAM_001" },
-              "model": { "$ref": "ASSOC_004" },
-              "head": { "$ref": "UCV_004" },
-              "tail": { "$ref": "AV_001" }
+              "width": 160,
+              "height": 50,
+              "font": "Arial;13;0"
             }
           ]
         },
         {
           "_type": "UMLActor",
-          "_id": "ACTOR_001",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "name": "Administrativo"
+          "_id": "ZJbhQuY8KvIs35Q6dAzy8g==",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
+          "name": "Personal Administrativo"
         },
         {
           "_type": "UMLUseCase",
-          "_id": "UC_001",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
+          "_id": "GzIK6M+yuSKtQQg1eambLQ==",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
           "name": "Buscar Alumno por ID"
         },
         {
           "_type": "UMLUseCase",
-          "_id": "UC_002",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
+          "_id": "vEQkFmY7BQ2kNxVWFwI0zw==",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
           "name": "Seleccionar Alumno"
         },
         {
           "_type": "UMLUseCase",
-          "_id": "UC_003",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "name": "Consultar Datos del Alumno"
+          "_id": "bXtAaDpqqT6HkUapzwcxDA==",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
+          "name": "Consultar Datos"
         },
         {
           "_type": "UMLUseCase",
-          "_id": "UC_004",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
+          "_id": "2hiiD+N40laLLTlYWaUslA==",
+          "_parent": {
+            "$ref": "hsFSp2PzJSiLVun8j+/VSg=="
+          },
           "name": "Generar Constancia"
-        },
-        {
-          "_type": "UMLAssociation",
-          "_id": "ASSOC_001",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "end1": { "reference": { "$ref": "ACTOR_001" } },
-          "end2": { "reference": { "$ref": "UC_001" } }
-        },
-        {
-          "_type": "UMLAssociation",
-          "_id": "ASSOC_002",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "end1": { "reference": { "$ref": "ACTOR_001" } },
-          "end2": { "reference": { "$ref": "UC_002" } }
-        },
-        {
-          "_type": "UMLAssociation",
-          "_id": "ASSOC_003",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "end1": { "reference": { "$ref": "ACTOR_001" } },
-          "end2": { "reference": { "$ref": "UC_003" } }
-        },
-        {
-          "_type": "UMLAssociation",
-          "_id": "ASSOC_004",
-          "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAh=" },
-          "end1": { "reference": { "$ref": "ACTOR_001" } },
-          "end2": { "reference": { "$ref": "UC_004" } }
         }
       ]
     },
     {
       "_type": "UMLModel",
-      "_id": "MODEL_ANALISIS",
-      "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAg=" },
+      "_id": "SFMKMjwrXqLMMAMn4uNkcg==",
+      "_parent": {
+        "$ref": "Qzx9Jv12C77qCaXm9usczQ=="
+      },
       "name": "Vista Lógica - Modelo de Análisis",
       "ownedElements": [
         {
           "_type": "UMLClassDiagram",
-          "_id": "CD_ANALISIS_001",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
+          "_id": "DIAG_CD_1",
+          "_parent": {
+            "$ref": "SFMKMjwrXqLMMAMn4uNkcg=="
+          },
           "name": "Diagrama de Clases de Análisis",
           "ownedViews": [
             {
               "_type": "UMLClassView",
-              "_id": "CV_BOUNDARY",
-              "_parent": { "$ref": "CD_ANALISIS_001" },
-              "model": { "$ref": "CLS_BOUNDARY" },
+              "_id": "oYs0qMw3KLa+AuE18v79tA==",
+              "_parent": {
+                "$ref": "DIAG_CD_1"
+              },
+              "model": {
+                "$ref": "dTiguReVTOP6rFYIlA+STA=="
+              },
               "left": 50,
               "top": 100,
-              "width": 200,
-              "height": 120
+              "width": 160,
+              "height": 80,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "vApnFJpwgHuda/+JBSYnxQ==",
+                "_parent": {
+                  "$ref": "oYs0qMw3KLa+AuE18v79tA=="
+                },
+                "model": {
+                  "$ref": "dTiguReVTOP6rFYIlA+STA=="
+                },
+                "left": 50,
+                "top": 100,
+                "width": 160,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "vSxiVx5eSzmUwu86UkWt7A==",
+                "_parent": {
+                  "$ref": "oYs0qMw3KLa+AuE18v79tA=="
+                },
+                "model": {
+                  "$ref": "dTiguReVTOP6rFYIlA+STA=="
+                },
+                "left": 50,
+                "top": 129,
+                "width": 160,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "ZJAxMFLO0qh3jsZZUTqGAQ==",
+                "_parent": {
+                  "$ref": "oYs0qMw3KLa+AuE18v79tA=="
+                },
+                "model": {
+                  "$ref": "dTiguReVTOP6rFYIlA+STA=="
+                },
+                "left": 50,
+                "top": 139,
+                "width": 160,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "CV_CONTROL",
-              "_parent": { "$ref": "CD_ANALISIS_001" },
-              "model": { "$ref": "CLS_CONTROL" },
-              "left": 350,
+              "_id": "ttdZdyUtpp0zatMP9OolJA==",
+              "_parent": {
+                "$ref": "DIAG_CD_1"
+              },
+              "model": {
+                "$ref": "+JbTPzDbZz1cBYZvt+vuwA=="
+              },
+              "left": 300,
               "top": 100,
-              "width": 200,
-              "height": 120
+              "width": 180,
+              "height": 80,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "wr81m0OTeWG26LqTBByYMg==",
+                "_parent": {
+                  "$ref": "ttdZdyUtpp0zatMP9OolJA=="
+                },
+                "model": {
+                  "$ref": "+JbTPzDbZz1cBYZvt+vuwA=="
+                },
+                "left": 300,
+                "top": 100,
+                "width": 180,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "2n5D/JFe/4Vzmb0zWBAI6Q==",
+                "_parent": {
+                  "$ref": "ttdZdyUtpp0zatMP9OolJA=="
+                },
+                "model": {
+                  "$ref": "+JbTPzDbZz1cBYZvt+vuwA=="
+                },
+                "left": 300,
+                "top": 129,
+                "width": 180,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "pCc/cikfgKTQLpQJYXipXQ==",
+                "_parent": {
+                  "$ref": "ttdZdyUtpp0zatMP9OolJA=="
+                },
+                "model": {
+                  "$ref": "+JbTPzDbZz1cBYZvt+vuwA=="
+                },
+                "left": 300,
+                "top": 139,
+                "width": 180,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "CV_ENTITY_ALUMNO",
-              "_parent": { "$ref": "CD_ANALISIS_001" },
-              "model": { "$ref": "CLS_ENTITY_ALUMNO" },
-              "left": 600,
+              "_id": "ClPaKDB8oBgOwrI5e2BY2Q==",
+              "_parent": {
+                "$ref": "DIAG_CD_1"
+              },
+              "model": {
+                "$ref": "/DPeCyvHbgHLf+pgHvcx9A=="
+              },
+              "left": 550,
               "top": 50,
-              "width": 200,
-              "height": 120
+              "width": 140,
+              "height": 80,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "Dq411PmdRHKXxnk4hwE4HA==",
+                "_parent": {
+                  "$ref": "ClPaKDB8oBgOwrI5e2BY2Q=="
+                },
+                "model": {
+                  "$ref": "/DPeCyvHbgHLf+pgHvcx9A=="
+                },
+                "left": 550,
+                "top": 50,
+                "width": 140,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "iWveFDSEs0NdBqIBi90Ivw==",
+                "_parent": {
+                  "$ref": "ClPaKDB8oBgOwrI5e2BY2Q=="
+                },
+                "model": {
+                  "$ref": "/DPeCyvHbgHLf+pgHvcx9A=="
+                },
+                "left": 550,
+                "top": 79,
+                "width": 140,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "2tSt8ePPeLvMpUlUCJz37g==",
+                "_parent": {
+                  "$ref": "ClPaKDB8oBgOwrI5e2BY2Q=="
+                },
+                "model": {
+                  "$ref": "/DPeCyvHbgHLf+pgHvcx9A=="
+                },
+                "left": 550,
+                "top": 89,
+                "width": 140,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "CV_ENTITY_MATERIA",
-              "_parent": { "$ref": "CD_ANALISIS_001" },
-              "model": { "$ref": "CLS_ENTITY_MATERIA" },
-              "left": 600,
-              "top": 220,
-              "width": 200,
-              "height": 100
+              "_id": "1rGKo7IO1ydq9fJEuHk5lQ==",
+              "_parent": {
+                "$ref": "DIAG_CD_1"
+              },
+              "model": {
+                "$ref": "v+v69qBqNSjjl7veixvjOw=="
+              },
+              "left": 550,
+              "top": 200,
+              "width": 140,
+              "height": 80,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "Cy8SI5fa3WHYfp1nREALMw==",
+                "_parent": {
+                  "$ref": "1rGKo7IO1ydq9fJEuHk5lQ=="
+                },
+                "model": {
+                  "$ref": "v+v69qBqNSjjl7veixvjOw=="
+                },
+                "left": 550,
+                "top": 200,
+                "width": 140,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "psg3Arw2gxFM88yJkIYC0A==",
+                "_parent": {
+                  "$ref": "1rGKo7IO1ydq9fJEuHk5lQ=="
+                },
+                "model": {
+                  "$ref": "v+v69qBqNSjjl7veixvjOw=="
+                },
+                "left": 550,
+                "top": 229,
+                "width": 140,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "nR0pbNlhdHsc74O/cDP5XA==",
+                "_parent": {
+                  "$ref": "1rGKo7IO1ydq9fJEuHk5lQ=="
+                },
+                "model": {
+                  "$ref": "v+v69qBqNSjjl7veixvjOw=="
+                },
+                "left": 550,
+                "top": 239,
+                "width": 140,
+                "height": 10
+              }
             }
           ]
         },
         {
           "_type": "UMLClass",
-          "_id": "CLS_BOUNDARY",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
-          "name": "<<boundary>>\nVentanaConstancia",
-          "stereotype": "boundary",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "txtId", "type": "JTextField" },
-            { "_type": "UMLAttribute", "name": "listaAlumnos", "type": "JList" },
-            { "_type": "UMLAttribute", "name": "txtInfo", "type": "JTextArea" },
-            { "_type": "UMLAttribute", "name": "btnGenerar", "type": "JButton" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "initComponents" },
-            { "_type": "UMLOperation", "name": "getTxtId", "returnType": "JTextField" },
-            { "_type": "UMLOperation", "name": "getListaAlumnos", "returnType": "JList" },
-            { "_type": "UMLOperation", "name": "getBtnGenerar", "returnType": "JButton" }
-          ]
+          "_id": "dTiguReVTOP6rFYIlA+STA==",
+          "_parent": {
+            "$ref": "SFMKMjwrXqLMMAMn4uNkcg=="
+          },
+          "name": "VentanaConstancia",
+          "stereotype": "boundary"
         },
         {
           "_type": "UMLClass",
-          "_id": "CLS_CONTROL",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
-          "name": "<<control>>\nControladorConstancia",
-          "stereotype": "control",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "vista", "type": "VentanaConstancia" },
-            { "_type": "UMLAttribute", "name": "todosLosAlumnos", "type": "ArrayList<Alumno>" },
-            { "_type": "UMLAttribute", "name": "alumnosFiltrados", "type": "ArrayList<Alumno>" },
-            { "_type": "UMLAttribute", "name": "alumnoSeleccionado", "type": "Alumno" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "configurarEventos" },
-            { "_type": "UMLOperation", "name": "filtrarAlumnos" },
-            { "_type": "UMLOperation", "name": "mostrarDatosAlumno" },
-            { "_type": "UMLOperation", "name": "generarConstancia" }
-          ]
+          "_id": "+JbTPzDbZz1cBYZvt+vuwA==",
+          "_parent": {
+            "$ref": "SFMKMjwrXqLMMAMn4uNkcg=="
+          },
+          "name": "ControladorConstancia",
+          "stereotype": "control"
         },
         {
           "_type": "UMLClass",
-          "_id": "CLS_ENTITY_ALUMNO",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
-          "name": "<<entity>>\nAlumno",
-          "stereotype": "entity",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "id", "type": "String" },
-            { "_type": "UMLAttribute", "name": "nombre", "type": "String" },
-            { "_type": "UMLAttribute", "name": "apellido", "type": "String" },
-            { "_type": "UMLAttribute", "name": "carrera", "type": "String" },
-            { "_type": "UMLAttribute", "name": "semestre", "type": "int" },
-            { "_type": "UMLAttribute", "name": "materias", "type": "ArrayList<Materia>" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "getNombreCompleto", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getCantidadMaterias", "returnType": "int" },
-            { "_type": "UMLOperation", "name": "getTotalCreditos", "returnType": "int" }
-          ]
+          "_id": "/DPeCyvHbgHLf+pgHvcx9A==",
+          "_parent": {
+            "$ref": "SFMKMjwrXqLMMAMn4uNkcg=="
+          },
+          "name": "Alumno",
+          "stereotype": "entity"
         },
         {
           "_type": "UMLClass",
-          "_id": "CLS_ENTITY_MATERIA",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
-          "name": "<<entity>>\nMateria",
-          "stereotype": "entity",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "clave", "type": "String" },
-            { "_type": "UMLAttribute", "name": "nombre", "type": "String" },
-            { "_type": "UMLAttribute", "name": "creditos", "type": "int" }
-          ]
-        },
-        {
-          "_type": "UMLSequenceDiagram",
-          "_id": "SD_ANALISIS_001",
-          "_parent": { "$ref": "MODEL_ANALISIS" },
-          "name": "Diagrama de Secuencia de Análisis - Flujo Básico"
+          "_id": "v+v69qBqNSjjl7veixvjOw==",
+          "_parent": {
+            "$ref": "SFMKMjwrXqLMMAMn4uNkcg=="
+          },
+          "name": "Materia",
+          "stereotype": "entity"
         }
       ]
     },
     {
       "_type": "UMLModel",
-      "_id": "MODEL_DISENO",
-      "_parent": { "$ref": "AAAAAAFF+qBWK6M3Z8IkBAg=" },
-      "name": "Vista Lógica - Modelo de Diseño (MVC)",
+      "_id": "ep6Xvrbqj/sV59qBMBZ9vw==",
+      "_parent": {
+        "$ref": "Qzx9Jv12C77qCaXm9usczQ=="
+      },
+      "name": "Vista Lógica - Modelo de Diseño MVC",
       "ownedElements": [
         {
           "_type": "UMLClassDiagram",
-          "_id": "CD_DISENO_001",
-          "_parent": { "$ref": "MODEL_DISENO" },
-          "name": "Diagrama de Clases de Diseño (MVC)",
+          "_id": "DIAG_CD_2",
+          "_parent": {
+            "$ref": "ep6Xvrbqj/sV59qBMBZ9vw=="
+          },
+          "name": "Diagrama de Clases de Diseño MVC",
           "ownedViews": [
             {
-              "_type": "UMLClassView",
-              "_id": "DCV_ALUMNO",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_ALUMNO" },
+              "_type": "UMLPackageView",
+              "_id": "mBRJa8PqUi9NrBeWS7IiuQ==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "/2XnJp4OYnk/C8bKptLvgQ=="
+              },
               "left": 50,
               "top": 50,
-              "width": 250,
-              "height": 200
+              "width": 300,
+              "height": 400,
+              "font": "Arial;13;0"
             },
             {
-              "_type": "UMLClassView",
-              "_id": "DCV_MATERIA",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_MATERIA" },
-              "left": 50,
+              "_type": "UMLPackageView",
+              "_id": "fJjIfo6vgOVCwJ3Dl0vePw==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "mIBpbX/H48YIgBiVuIBdqA=="
+              },
+              "left": 450,
+              "top": 50,
+              "width": 250,
+              "height": 200,
+              "font": "Arial;13;0"
+            },
+            {
+              "_type": "UMLPackageView",
+              "_id": "e7P0LK5fZlOw4verzAvxEg==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "xbWptaD1mMiBFUz1Gy2lUA=="
+              },
+              "left": 450,
               "top": 300,
               "width": 250,
-              "height": 130
+              "height": 200,
+              "font": "Arial;13;0"
             },
             {
               "_type": "UMLClassView",
-              "_id": "DCV_DATOS",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_DATOS" },
-              "left": 50,
-              "top": 480,
-              "width": 250,
-              "height": 80
+              "_id": "ApuCBc1jcDOQmSc5creYGA==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "QZ6hOSPQMeQl6cnmYG6rkQ=="
+              },
+              "left": 70,
+              "top": 100,
+              "width": 120,
+              "height": 100,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "DzL6E8oAJfdljxWaBEf6Iw==",
+                "_parent": {
+                  "$ref": "ApuCBc1jcDOQmSc5creYGA=="
+                },
+                "model": {
+                  "$ref": "QZ6hOSPQMeQl6cnmYG6rkQ=="
+                },
+                "left": 70,
+                "top": 100,
+                "width": 120,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "+/pi3ZddoXZBJzZ/Y3ucfw==",
+                "_parent": {
+                  "$ref": "ApuCBc1jcDOQmSc5creYGA=="
+                },
+                "model": {
+                  "$ref": "QZ6hOSPQMeQl6cnmYG6rkQ=="
+                },
+                "left": 70,
+                "top": 129,
+                "width": 120,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "/RMkyVy6M5nO/t85MGVpkA==",
+                "_parent": {
+                  "$ref": "ApuCBc1jcDOQmSc5creYGA=="
+                },
+                "model": {
+                  "$ref": "QZ6hOSPQMeQl6cnmYG6rkQ=="
+                },
+                "left": 70,
+                "top": 139,
+                "width": 120,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "DCV_VISTA",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_VISTA" },
-              "left": 400,
-              "top": 50,
-              "width": 280,
-              "height": 250
+              "_id": "PVuBv5tFerKTQPnlUzeG/Q==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "0rvtUUupFxujjSox80sqIQ=="
+              },
+              "left": 70,
+              "top": 250,
+              "width": 120,
+              "height": 80,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "xL/whmgFVYcMZX9Lg1pjGw==",
+                "_parent": {
+                  "$ref": "PVuBv5tFerKTQPnlUzeG/Q=="
+                },
+                "model": {
+                  "$ref": "0rvtUUupFxujjSox80sqIQ=="
+                },
+                "left": 70,
+                "top": 250,
+                "width": 120,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "jc9ioTq45rIGMvXEvhbecg==",
+                "_parent": {
+                  "$ref": "PVuBv5tFerKTQPnlUzeG/Q=="
+                },
+                "model": {
+                  "$ref": "0rvtUUupFxujjSox80sqIQ=="
+                },
+                "left": 70,
+                "top": 279,
+                "width": 120,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "wfIRRORf4mdfRJl2QHgXlQ==",
+                "_parent": {
+                  "$ref": "PVuBv5tFerKTQPnlUzeG/Q=="
+                },
+                "model": {
+                  "$ref": "0rvtUUupFxujjSox80sqIQ=="
+                },
+                "left": 70,
+                "top": 289,
+                "width": 120,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "DCV_CONTROLADOR",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_CONTROLADOR" },
-              "left": 400,
+              "_id": "5qNnny9Zc8P/5CfCLeQ0Rw==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "8ZvhahM0clmQ8yioe1PHCg=="
+              },
+              "left": 70,
+              "top": 360,
+              "width": 150,
+              "height": 60,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "MgcBVWpMQ01V1xXjc1VKow==",
+                "_parent": {
+                  "$ref": "5qNnny9Zc8P/5CfCLeQ0Rw=="
+                },
+                "model": {
+                  "$ref": "8ZvhahM0clmQ8yioe1PHCg=="
+                },
+                "left": 70,
+                "top": 360,
+                "width": 150,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "UMYYqmTIYrppvNsOLRAuRw==",
+                "_parent": {
+                  "$ref": "5qNnny9Zc8P/5CfCLeQ0Rw=="
+                },
+                "model": {
+                  "$ref": "8ZvhahM0clmQ8yioe1PHCg=="
+                },
+                "left": 70,
+                "top": 389,
+                "width": 150,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "KWYgCqTXcNj/98W7XR80iQ==",
+                "_parent": {
+                  "$ref": "5qNnny9Zc8P/5CfCLeQ0Rw=="
+                },
+                "model": {
+                  "$ref": "8ZvhahM0clmQ8yioe1PHCg=="
+                },
+                "left": 70,
+                "top": 399,
+                "width": 150,
+                "height": 10
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "5TgaLsC4OeCpNVSi1lOfgw==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "1TEijclY6V2sfHqPg/p3VQ=="
+              },
+              "left": 480,
+              "top": 100,
+              "width": 180,
+              "height": 120,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "9po+zZGCkgAUSNreknfsNw==",
+                "_parent": {
+                  "$ref": "5TgaLsC4OeCpNVSi1lOfgw=="
+                },
+                "model": {
+                  "$ref": "1TEijclY6V2sfHqPg/p3VQ=="
+                },
+                "left": 480,
+                "top": 100,
+                "width": 180,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "l98j86g4gSohyPyHGwL6nA==",
+                "_parent": {
+                  "$ref": "5TgaLsC4OeCpNVSi1lOfgw=="
+                },
+                "model": {
+                  "$ref": "1TEijclY6V2sfHqPg/p3VQ=="
+                },
+                "left": 480,
+                "top": 129,
+                "width": 180,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "LorsueiKNgsP7jMeu2+R+g==",
+                "_parent": {
+                  "$ref": "5TgaLsC4OeCpNVSi1lOfgw=="
+                },
+                "model": {
+                  "$ref": "1TEijclY6V2sfHqPg/p3VQ=="
+                },
+                "left": 480,
+                "top": 139,
+                "width": 180,
+                "height": 10
+              }
+            },
+            {
+              "_type": "UMLClassView",
+              "_id": "e9qkAA2WdB6qDA/XzrjsJw==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "ciJtCPgQUHtoqifkuXQU9Q=="
+              },
+              "left": 480,
               "top": 350,
-              "width": 280,
-              "height": 200
+              "width": 180,
+              "height": 120,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "U2rWdGdlXpz7xKL+SROSJw==",
+                "_parent": {
+                  "$ref": "e9qkAA2WdB6qDA/XzrjsJw=="
+                },
+                "model": {
+                  "$ref": "ciJtCPgQUHtoqifkuXQU9Q=="
+                },
+                "left": 480,
+                "top": 350,
+                "width": 180,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "xbV/4pp6495VKJL4Jwg8LQ==",
+                "_parent": {
+                  "$ref": "e9qkAA2WdB6qDA/XzrjsJw=="
+                },
+                "model": {
+                  "$ref": "ciJtCPgQUHtoqifkuXQU9Q=="
+                },
+                "left": 480,
+                "top": 379,
+                "width": 180,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "lsYrDJts2BT4j0H7SbEutA==",
+                "_parent": {
+                  "$ref": "e9qkAA2WdB6qDA/XzrjsJw=="
+                },
+                "model": {
+                  "$ref": "ciJtCPgQUHtoqifkuXQU9Q=="
+                },
+                "left": 480,
+                "top": 389,
+                "width": 180,
+                "height": 10
+              }
             },
             {
               "_type": "UMLClassView",
-              "_id": "DCV_MAIN",
-              "_parent": { "$ref": "CD_DISENO_001" },
-              "model": { "$ref": "DCLS_MAIN" },
+              "_id": "xceGX15Q2GadF/sPwm0K1A==",
+              "_parent": {
+                "$ref": "DIAG_CD_2"
+              },
+              "model": {
+                "$ref": "QSvfDpf6gCv1VNpXLZ8E1Q=="
+              },
               "left": 750,
               "top": 200,
-              "width": 150,
-              "height": 80
+              "width": 120,
+              "height": 60,
+              "font": "Arial;13;0",
+              "nameCompartment": {
+                "_type": "UMLNameCompartmentView",
+                "_id": "Vf50GwlPI044qwxT3n7aUQ==",
+                "_parent": {
+                  "$ref": "xceGX15Q2GadF/sPwm0K1A=="
+                },
+                "model": {
+                  "$ref": "QSvfDpf6gCv1VNpXLZ8E1Q=="
+                },
+                "left": 750,
+                "top": 200,
+                "width": 120,
+                "height": 29
+              },
+              "attributeCompartment": {
+                "_type": "UMLAttributeCompartmentView",
+                "_id": "MGcYG4SjY7uiJD+fApciuw==",
+                "_parent": {
+                  "$ref": "xceGX15Q2GadF/sPwm0K1A=="
+                },
+                "model": {
+                  "$ref": "QSvfDpf6gCv1VNpXLZ8E1Q=="
+                },
+                "left": 750,
+                "top": 229,
+                "width": 120,
+                "height": 10
+              },
+              "operationCompartment": {
+                "_type": "UMLOperationCompartmentView",
+                "_id": "/fqigRAMWE8+z2SlDl+bqg==",
+                "_parent": {
+                  "$ref": "xceGX15Q2GadF/sPwm0K1A=="
+                },
+                "model": {
+                  "$ref": "QSvfDpf6gCv1VNpXLZ8E1Q=="
+                },
+                "left": 750,
+                "top": 239,
+                "width": 120,
+                "height": 10
+              }
             }
           ]
         },
         {
           "_type": "UMLPackage",
-          "_id": "PKG_MODELO",
-          "_parent": { "$ref": "MODEL_DISENO" },
-          "name": "com.mycompany.constanciaalumno.modelo"
+          "_id": "/2XnJp4OYnk/C8bKptLvgQ==",
+          "_parent": {
+            "$ref": "ep6Xvrbqj/sV59qBMBZ9vw=="
+          },
+          "name": "modelo",
+          "ownedElements": [
+            {
+              "_type": "UMLClass",
+              "_id": "QZ6hOSPQMeQl6cnmYG6rkQ==",
+              "_parent": {
+                "$ref": "/2XnJp4OYnk/C8bKptLvgQ=="
+              },
+              "name": "Alumno",
+              "stereotype": ""
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "0rvtUUupFxujjSox80sqIQ==",
+              "_parent": {
+                "$ref": "/2XnJp4OYnk/C8bKptLvgQ=="
+              },
+              "name": "Materia",
+              "stereotype": ""
+            },
+            {
+              "_type": "UMLClass",
+              "_id": "8ZvhahM0clmQ8yioe1PHCg==",
+              "_parent": {
+                "$ref": "/2XnJp4OYnk/C8bKptLvgQ=="
+              },
+              "name": "DatosAlumnos",
+              "stereotype": ""
+            }
+          ]
         },
         {
           "_type": "UMLPackage",
-          "_id": "PKG_VISTA",
-          "_parent": { "$ref": "MODEL_DISENO" },
-          "name": "com.mycompany.constanciaalumno.vista"
+          "_id": "mIBpbX/H48YIgBiVuIBdqA==",
+          "_parent": {
+            "$ref": "ep6Xvrbqj/sV59qBMBZ9vw=="
+          },
+          "name": "vista",
+          "ownedElements": [
+            {
+              "_type": "UMLClass",
+              "_id": "1TEijclY6V2sfHqPg/p3VQ==",
+              "_parent": {
+                "$ref": "mIBpbX/H48YIgBiVuIBdqA=="
+              },
+              "name": "VentanaConstancia",
+              "stereotype": ""
+            }
+          ]
         },
         {
           "_type": "UMLPackage",
-          "_id": "PKG_CONTROLADOR",
-          "_parent": { "$ref": "MODEL_DISENO" },
-          "name": "com.mycompany.constanciaalumno.controlador"
-        },
-        {
-          "_type": "UMLClass",
-          "_id": "DCLS_ALUMNO",
-          "_parent": { "$ref": "PKG_MODELO" },
-          "name": "Alumno",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "id", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "nombre", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "apellido", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "carrera", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "semestre", "type": "int", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "materias", "type": "ArrayList<Materia>", "visibility": "package" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "agregarMateria", "parameters": [{"name": "m", "type": "Materia"}] },
-            { "_type": "UMLOperation", "name": "getId", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getNombreCompleto", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getCarrera", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getSemestre", "returnType": "int" },
-            { "_type": "UMLOperation", "name": "getMaterias", "returnType": "ArrayList<Materia>" },
-            { "_type": "UMLOperation", "name": "getCantidadMaterias", "returnType": "int" },
-            { "_type": "UMLOperation", "name": "getTotalCreditos", "returnType": "int" }
+          "_id": "xbWptaD1mMiBFUz1Gy2lUA==",
+          "_parent": {
+            "$ref": "ep6Xvrbqj/sV59qBMBZ9vw=="
+          },
+          "name": "controlador",
+          "ownedElements": [
+            {
+              "_type": "UMLClass",
+              "_id": "ciJtCPgQUHtoqifkuXQU9Q==",
+              "_parent": {
+                "$ref": "xbWptaD1mMiBFUz1Gy2lUA=="
+              },
+              "name": "ControladorConstancia",
+              "stereotype": ""
+            }
           ]
         },
         {
           "_type": "UMLClass",
-          "_id": "DCLS_MATERIA",
-          "_parent": { "$ref": "PKG_MODELO" },
-          "name": "Materia",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "clave", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "nombre", "type": "String", "visibility": "package" },
-            { "_type": "UMLAttribute", "name": "creditos", "type": "int", "visibility": "package" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "getClave", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getNombre", "returnType": "String" },
-            { "_type": "UMLOperation", "name": "getCreditos", "returnType": "int" },
-            { "_type": "UMLOperation", "name": "toString", "returnType": "String" }
-          ]
-        },
-        {
-          "_type": "UMLClass",
-          "_id": "DCLS_DATOS",
-          "_parent": { "$ref": "PKG_MODELO" },
-          "name": "DatosAlumnos",
-          "operations": [
-            { "_type": "UMLOperation", "name": "obtenerAlumnos", "returnType": "ArrayList<Alumno>", "isStatic": true }
-          ]
-        },
-        {
-          "_type": "UMLClass",
-          "_id": "DCLS_VISTA",
-          "_parent": { "$ref": "PKG_VISTA" },
-          "name": "VentanaConstancia",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "txtId", "type": "JTextField", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "listaAlumnos", "type": "JList<String>", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "modeloLista", "type": "DefaultListModel<String>", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "txtInfo", "type": "JTextArea", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "btnGenerar", "type": "JButton", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "scrollInfo", "type": "JScrollPane", "visibility": "private" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "initComponents", "visibility": "private" },
-            { "_type": "UMLOperation", "name": "getTxtId", "returnType": "JTextField" },
-            { "_type": "UMLOperation", "name": "getListaAlumnos", "returnType": "JList<String>" },
-            { "_type": "UMLOperation", "name": "getModeloLista", "returnType": "DefaultListModel<String>" },
-            { "_type": "UMLOperation", "name": "getTxtInfo", "returnType": "JTextArea" },
-            { "_type": "UMLOperation", "name": "getBtnGenerar", "returnType": "JButton" },
-            { "_type": "UMLOperation", "name": "getScrollInfo", "returnType": "JScrollPane" }
-          ]
-        },
-        {
-          "_type": "UMLClass",
-          "_id": "DCLS_CONTROLADOR",
-          "_parent": { "$ref": "PKG_CONTROLADOR" },
-          "name": "ControladorConstancia",
-          "attributes": [
-            { "_type": "UMLAttribute", "name": "vista", "type": "VentanaConstancia", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "todosLosAlumnos", "type": "ArrayList<Alumno>", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "alumnosFiltrados", "type": "ArrayList<Alumno>", "visibility": "private" },
-            { "_type": "UMLAttribute", "name": "alumnoSeleccionado", "type": "Alumno", "visibility": "private" }
-          ],
-          "operations": [
-            { "_type": "UMLOperation", "name": "configurarEventos", "visibility": "private" },
-            { "_type": "UMLOperation", "name": "filtrarAlumnos", "visibility": "private" },
-            { "_type": "UMLOperation", "name": "mostrarDatosAlumno", "visibility": "private" },
-            { "_type": "UMLOperation", "name": "generarConstancia", "visibility": "private" }
-          ]
-        },
-        {
-          "_type": "UMLClass",
-          "_id": "DCLS_MAIN",
-          "_parent": { "$ref": "MODEL_DISENO" },
+          "_id": "QSvfDpf6gCv1VNpXLZ8E1Q==",
+          "_parent": {
+            "$ref": "ep6Xvrbqj/sV59qBMBZ9vw=="
+          },
           "name": "Main",
-          "operations": [
-            { "_type": "UMLOperation", "name": "main", "isStatic": true, "parameters": [{"name": "args", "type": "String[]"}] }
-          ]
-        },
-        {
-          "_type": "UMLSequenceDiagram",
-          "_id": "SD_DISENO_001",
-          "_parent": { "$ref": "MODEL_DISENO" },
-          "name": "Diagrama de Secuencia de Diseño - Generar Constancia"
+          "stereotype": ""
         }
       ]
     }

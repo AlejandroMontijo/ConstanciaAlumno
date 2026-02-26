@@ -1,0 +1,175 @@
+{
+  "_type": "Project",
+  "_id": "26398f69c921ca979e9eb1b67c2b2c5d",
+  "name": "Examen_1_ID",
+  "ownedElements": [
+    {
+      "_type": "UMLModel",
+      "_id": "f34ada3cabdb72180880bed6a2c4cdcd",
+      "_parent": {
+        "$ref": "26398f69c921ca979e9eb1b67c2b2c5d"
+      },
+      "name": "Vista de Escenarios",
+      "ownedElements": [
+        {
+          "_type": "UMLUseCaseDiagram",
+          "_id": "95c9f9f2ba2236dc403b7ecfc12b34f7",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Diagrama de Casos de Uso",
+          "ownedViews": [
+            {
+              "_type": "UMLActorView",
+              "_id": "c822e0b02744619b592ebfee6ea45181",
+              "_parent": {
+                "$ref": "95c9f9f2ba2236dc403b7ecfc12b34f7"
+              },
+              "model": {
+                "$ref": "1dca7d3da71a94cac73df22c7edc9288"
+              },
+              "left": 100,
+              "top": 200,
+              "width": 80,
+              "height": 100
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "d33e2c3cc0509a4c94f588c78259dad6",
+              "_parent": {
+                "$ref": "95c9f9f2ba2236dc403b7ecfc12b34f7"
+              },
+              "model": {
+                "$ref": "89e41c049d10e28496c5df88e1ccc8ee"
+              },
+              "left": 300,
+              "top": 50,
+              "width": 200,
+              "height": 60
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "975deda8d7836e3478ba4aece99f44a3",
+              "_parent": {
+                "$ref": "95c9f9f2ba2236dc403b7ecfc12b34f7"
+              },
+              "model": {
+                "$ref": "fe29098088211f46289a25e07681b60e"
+              },
+              "left": 300,
+              "top": 150,
+              "width": 200,
+              "height": 60
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "26ea9b88bac1fc54ceb3a304e3b98aa9",
+              "_parent": {
+                "$ref": "95c9f9f2ba2236dc403b7ecfc12b34f7"
+              },
+              "model": {
+                "$ref": "bc13948400fdab0c63c3f4c196696165"
+              },
+              "left": 300,
+              "top": 250,
+              "width": 200,
+              "height": 60
+            },
+            {
+              "_type": "UMLUseCaseView",
+              "_id": "dbbe04889550c2393ec5f8b1a9adc4b3",
+              "_parent": {
+                "$ref": "95c9f9f2ba2236dc403b7ecfc12b34f7"
+              },
+              "model": {
+                "$ref": "5aedfab691bd66ac63fd0a29278e026b"
+              },
+              "left": 300,
+              "top": 350,
+              "width": 200,
+              "height": 60
+            }
+          ]
+        },
+        {
+          "_type": "UMLActor",
+          "_id": "1dca7d3da71a94cac73df22c7edc9288",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Personal Administrativo",
+          "ownedElements": [
+            {
+              "_type": "UMLAssociation",
+              "_id": "fb0d2a914e5a5f2101cc2197d3f082ee",
+              "_parent": {
+                "$ref": "1dca7d3da71a94cac73df22c7edc9288"
+              },
+              "end1": {
+                "_type": "UMLAssociationEnd",
+                "_id": "73045b88f418fe0277e736137f6a4fc7",
+                "_parent": {
+                  "$ref": "fb0d2a914e5a5f2101cc2197d3f082ee"
+                },
+                "reference": {
+                  "$ref": "1dca7d3da71a94cac73df22c7edc9288"
+                }
+              },
+              "end2": {
+                "_type": "UMLAssociationEnd",
+                "_id": "530586ca15f2dcdf73e206b722c02172",
+                "_parent": {
+                  "$ref": "fb0d2a914e5a5f2101cc2197d3f082ee"
+                },
+                "reference": {
+                  "$ref": "5aedfab691bd66ac63fd0a29278e026b"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "_type": "UMLUseCase",
+          "_id": "89e41c049d10e28496c5df88e1ccc8ee",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Buscar Alumno por ID"
+        },
+        {
+          "_type": "UMLUseCase",
+          "_id": "fe29098088211f46289a25e07681b60e",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Seleccionar Alumno"
+        },
+        {
+          "_type": "UMLUseCase",
+          "_id": "bc13948400fdab0c63c3f4c196696165",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Consultar Datos"
+        },
+        {
+          "_type": "UMLUseCase",
+          "_id": "5aedfab691bd66ac63fd0a29278e026b",
+          "_parent": {
+            "$ref": "f34ada3cabdb72180880bed6a2c4cdcd"
+          },
+          "name": "Generar Constancia"
+        }
+      ]
+    },
+    {
+      "_type": "UMLModel",
+      "_id": "eff0cbd15e8909e9519b3991614ba23b",
+      "_parent": {
+        "$ref": "26398f69c921ca979e9eb1b67c2b2c5d"
+      },
+      "name": "Resto de Modelos (Auto-Generados)",
+      "ownedElements": []
+    }
+  ]
+}
