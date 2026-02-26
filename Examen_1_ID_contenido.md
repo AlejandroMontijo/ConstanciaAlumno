@@ -144,7 +144,7 @@ El usuario escribe "000123" y aparecen 2 alumnos que hacen match:
 
 ## 3. Liga al código en GitHub
 
-> **[AGREGAR AQUÍ LA URL DEL REPOSITORIO EN GITHUB]**
+> **https://github.com/AlejandroMontijo/ConstanciaAlumno**
 
 ---
 
